@@ -1,0 +1,5 @@
+2015-03-03 16:48:10,504 - primes.generator.generator - INFO - Retrieving path info
+2015-03-03 16:48:23,705 - primes.generator.generator - INFO - Retrieving path info
+2015-03-03 17:04:16,317 - primes.generator.prime - INFO - Starting prime generation
+2015-03-03 17:04:16,321 - primes.generator.generator - INFO - Retrieving path info
+2015-03-03 17:04:16,321 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/1.dat
