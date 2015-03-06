@@ -1,6 +1,7 @@
 import os
 import logging
 import primes.utils.logger as log
+from primes.utils.custom_complex import CustomComplex
 import numpy
 
 
@@ -15,6 +16,8 @@ class Generator(object):
         self.maximum = maximum
         self.path = "primes/generator/data/"
         self.datatype = int
+        # maximum number of elements missing from cache to do full generation
+        self.threshold = 100
         self.data = None
 
     def generate(self):
@@ -32,9 +35,7 @@ class Generator(object):
         logger.info("Checking cache")
         for f_ in files:
             with open(self.path + f_, 'r') as f:
-                data = numpy.loadtxt(f, delimiter=',')
-                logger.info("Casting data")
-                data = [self.datatype(n) for n in data]
+                data = numpy.loadtxt(f, delimiter=',', dtype=self.datatype)
                 logger.info("Finding pertinent data (%s - %s)", self.minimum, self.maximum)
                 data = filter(lambda x: self.minimum <= x <= self.maximum, data)
                 logger.info("Data length %s", str(len(data)))
@@ -46,6 +47,22 @@ class Generator(object):
         else:
             logger.info("No data found in cache")
         return data
+
+    def complex_range(self, minimum, maximum):
+        zs = []
+        for i in range(numpy.real(minimum), numpy.real(maximum)):
+            for j in range(numpy.imag(minimum), numpy.imag(maximum)):
+                zs.append(CustomComplex(i, j))
+        return zs
+
+    def not_in_cache(self):
+        if self.datatype == complex:
+            return filter(lambda x: CustomComplex(self.minimum) <= x < CustomComplex(self.data[0]),
+                                    self.complex_range(self.minimum, self.data[0])), \
+                   filter(lambda x: CustomComplex(self.data[-1]) < x <= CustomComplex(self.maximum),
+                                    self.complex_range(self.data[-1], self.maximum))
+        return filter(lambda x: self.minimum <= x < min(self.data), range(self.minimum, min(self.data))), \
+               filter(lambda x: max(self.data) < x <= self.maximum, range(max(self.data), self.maximum + 1))
 
     # cache write
 

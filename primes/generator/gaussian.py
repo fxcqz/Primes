@@ -13,24 +13,36 @@ class Generator(generator.Generator):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/gaussians/"
         self.datatype = complex
+        self.threshold = 300
         self.limit = max([np.real(self.minimum) ** 2 + np.imag(self.minimum) ** 2,
                           np.real(self.maximum) ** 2 + np.imag(self.maximum) ** 2])
-        sieve = prime.Generator("primes/generator/data/primes/",
-                                 maximum=int(self.limit))
+        sieve = prime.Generator(maximum=int(self.limit))
         sieve.generate()
         self.primes = sieve.data
 
     def generate(self):
-        gaussians = []
-        logger.info("Starting generation")
-        for i in range(np.real(self.minimum), np.real(self.maximum)):
-            for j in range(np.imag(self.minimum), np.imag(self.maximum)):
-                z = np.complex(i, j)
-                if self.is_gaussian_prime(z):
-                    gaussians.append(z)
-            logger.info("%s", str(i))
-        logger.info("Writing data")
-        self.data = gaussians
+        logger.info("Checking cache")
+        self.data = self.read_cache()
+        cache_miss = self.not_in_cache()
+        if self.data:
+            if len(cache_miss[0]) + len(cache_miss[1]) < self.threshold:
+                for n in cache_miss[0]:
+                    if self.is_gaussian_prime(n):
+                        self.data.insert(0, n)
+                for n in cache_miss[1]:
+                    if self.is_gaussian_prime(n):
+                        self.data.append(n)
+        else:
+            gaussians = []
+            logger.info("Starting generation")
+            for i in range(np.real(self.minimum), np.real(self.maximum)):
+                for j in range(np.imag(self.minimum), np.imag(self.maximum)):
+                    z = np.complex(i, j)
+                    if self.is_gaussian_prime(z):
+                        gaussians.append(z)
+                logger.info("%s", str(i))
+            logger.info("Writing data")
+            self.data = gaussians
 
     def is_gaussian_prime(self, z):
         re = np.real(z)
