@@ -65,6 +65,8 @@ class Generator(object):
                filter(lambda x: max(self.data) < x <= self.maximum, range(max(self.data), self.maximum + 1))
 
     # cache write
+    # TODO: this can be improved to not cache duplicate data
+    #       (file rotation/size cap etc)
 
     def next_filename(self, path):
         try:
