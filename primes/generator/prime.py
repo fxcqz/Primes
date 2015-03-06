@@ -9,12 +9,17 @@ import primes.utils.logger as log
 log.setup_logging()
 logger = logging.getLogger(__name__)
 
-class PrimeSieve(generator.Generator):
+class Generator(generator.Generator):
+    def __init__(self, minimum=0, maximum=1):
+        super(self.__class__, self).__init__(minimum, maximum)
+        self.path = "primes/generator/data/primes/"
+
     def j_increment(self, j):
         return [int(math.pow(j, 2) + (n * j)) for n in
                 itertools.takewhile(lambda x: int(math.pow(j, 2) + (x * j)) <= self.maximum, range(0, self.maximum))]
 
     def generate(self):
+        self.data = self.read_cache()
         logger.info("Starting prime generation")
         numbers = [True] * (self.maximum + 1)
         for i in range(2, int(math.sqrt(self.maximum))):

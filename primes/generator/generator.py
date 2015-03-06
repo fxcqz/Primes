@@ -1,6 +1,7 @@
 import os
 import logging
 import primes.utils.logger as log
+import numpy
 
 
 # TODO:
@@ -8,15 +9,45 @@ import primes.utils.logger as log
 log.setup_logging()
 logger = logging.getLogger(__name__)
 
-class Generator():
-    def __init__(self, path, minimum=0, maximum=1):
+class Generator(object):
+    def __init__(self, minimum=0, maximum=1):
         self.minimum = minimum
         self.maximum = maximum
-        self.path = path
+        self.path = "primes/generator/data/"
+        self.datatype = int
         self.data = None
 
     def generate(self):
         pass
+
+    # cache read
+
+    def data_files_from_dir(self):
+        return filter(lambda x: ".dat" in x, list(os.walk(self.path))[0][2])
+
+    def read_cache(self):
+        files = self.data_files_from_dir()
+        logger.info(files)
+        data = None
+        logger.info("Checking cache")
+        for f_ in files:
+            with open(self.path + f_, 'r') as f:
+                data = numpy.loadtxt(f, delimiter=',')
+                logger.info("Casting data")
+                data = [self.datatype(n) for n in data]
+                logger.info("Finding pertinent data (%s - %s)", self.minimum, self.maximum)
+                data = filter(lambda x: self.minimum <= x <= self.maximum, data)
+                logger.info("Data length %s", str(len(data)))
+        if data:
+            logger.info("Removing duplicates")
+            data = list(set(data))
+            logger.info("Sorting data")
+            data.sort()
+        else:
+            logger.info("No data found in cache")
+        return data
+
+    # cache write
 
     def next_filename(self, path):
         try:

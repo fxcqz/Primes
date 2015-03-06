@@ -1,25 +1,35 @@
 import numpy as np
 import prime
 import generator
+import logging
+import primes.utils.logger as log
 
 
-class GaussianPrime(generator.Generator):
-    def __init__(self, path, minimum=0, maximum=1):
-        super(self.__class__, self).__init__(path, minimum, maximum)
+log.setup_logging()
+logger = logging.getLogger(__name__)
+
+class Generator(generator.Generator):
+    def __init__(self, minimum=0, maximum=1):
+        super(self.__class__, self).__init__(minimum, maximum)
+        self.path = "primes/generator/data/gaussians/"
+        self.datatype = complex
         self.limit = max([np.real(self.minimum) ** 2 + np.imag(self.minimum) ** 2,
                           np.real(self.maximum) ** 2 + np.imag(self.maximum) ** 2])
-        sieve = prime.PrimeSieve("primes/generator/data/primes/",
-                                 maximum=self.limit)
+        sieve = prime.Generator("primes/generator/data/primes/",
+                                 maximum=int(self.limit))
         sieve.generate()
         self.primes = sieve.data
 
-    def generate_gaussian_primes(self):
+    def generate(self):
         gaussians = []
+        logger.info("Starting generation")
         for i in range(np.real(self.minimum), np.real(self.maximum)):
             for j in range(np.imag(self.minimum), np.imag(self.maximum)):
                 z = np.complex(i, j)
                 if self.is_gaussian_prime(z):
                     gaussians.append(z)
+            logger.info("%s", str(i))
+        logger.info("Writing data")
         self.data = gaussians
 
     def is_gaussian_prime(self, z):
