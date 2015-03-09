@@ -42,7 +42,7 @@ class Generator(generator.Generator):
                         gaussians.append(z)
                 logger.info("%s", str(i))
             logger.info("Writing data")
-            self.data = gaussians
+            self.data = np.array(gaussians)
 
     def is_gaussian_prime(self, z):
         re = np.real(z)

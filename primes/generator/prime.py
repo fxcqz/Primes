@@ -4,9 +4,9 @@ import math
 import generator
 import logging
 import primes.utils.logger as log
+import numpy
 
 
-log.setup_logging()
 logger = logging.getLogger(__name__)
 
 class Generator(generator.Generator):
@@ -46,4 +46,4 @@ class Generator(generator.Generator):
                 if numbers[i]:
                     for j in self.j_increment(i):
                         numbers[j] = False
-            self.data = [i for i, j in enumerate(numbers) if j and i > 1]
+            self.data = numpy.array([i for i, j in enumerate(numbers) if j and i > 1])

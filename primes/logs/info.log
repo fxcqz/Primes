@@ -1593,3 +1593,313 @@
 2015-03-06 13:11:19,581 - primes.generator.generator - INFO - Sorting data
 2015-03-06 13:11:19,594 - primes.generator.generator - INFO - Retrieving path info
 2015-03-06 13:11:19,594 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/2.dat
+2015-03-09 17:33:41,346 - primes.generator.generator - INFO - ['1.dat']
+2015-03-09 17:33:41,375 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:33:41,376 - primes.generator.generator - INFO - Finding pertinent data (0 - 1000)
+2015-03-09 17:33:41,377 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:33:41,377 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:33:41,377 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:34:23,938 - primes.generator.generator - INFO - ['1.dat']
+2015-03-09 17:34:23,938 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:34:23,939 - primes.generator.generator - INFO - Finding pertinent data (0 - 1000)
+2015-03-09 17:34:23,939 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:34:23,940 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:34:23,940 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:35:17,279 - primes.generator.generator - INFO - ['1.dat']
+2015-03-09 17:35:17,279 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:35:17,280 - primes.generator.generator - INFO - Finding pertinent data (0 - 1000)
+2015-03-09 17:35:17,281 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:35:17,281 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:35:17,281 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:50:10,081 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:50:10,081 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:50:10,082 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:50:10,082 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:50:10,094 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,094 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,100 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,100 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,111 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,111 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,117 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,117 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,127 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,127 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,132 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,132 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:50:10,133 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,133 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:50:10,134 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:50:10,134 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:50:10,134 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:50:10,134 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:50:10,135 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:50:10,135 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:51:35,347 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:51:35,347 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:51:35,347 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:51:35,347 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:51:35,361 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,361 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,367 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,367 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,378 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,378 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,383 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,383 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,393 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,393 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,399 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,399 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:51:35,400 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,400 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:51:35,401 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:51:35,401 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:51:35,401 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:51:35,401 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:51:35,402 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:51:35,402 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:52:29,056 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:52:29,057 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:52:29,069 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:52:29,075 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:52:29,084 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:52:29,090 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:52:29,099 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:52:29,105 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:52:29,105 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:52:29,106 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:52:29,106 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:52:29,106 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:53:01,378 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:53:01,379 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:53:01,391 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:53:01,397 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:53:01,407 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:53:01,413 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:53:01,422 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:53:01,427 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:53:01,428 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:53:01,429 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:53:01,429 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:53:01,429 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:54:01,466 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:54:01,467 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:54:01,479 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:01,485 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:01,495 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:01,500 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:01,510 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:01,515 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:01,516 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:01,516 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:54:01,516 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:54:01,517 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:54:56,119 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:54:56,119 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:54:56,132 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:56,137 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:56,147 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:56,153 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:56,162 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:56,168 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:54:56,168 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:54:56,169 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:54:56,169 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:54:56,169 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:55:25,229 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:55:25,230 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:55:25,242 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:25,248 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:25,258 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:25,263 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:25,272 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:25,278 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:25,278 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:25,279 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:55:25,279 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:55:25,279 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:55:46,956 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:55:46,956 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:55:46,968 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:46,974 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:46,984 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:46,989 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:46,998 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:47,003 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:55:47,004 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:55:47,004 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:55:47,005 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:55:47,005 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:58:21,237 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:58:21,237 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:58:21,250 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:21,256 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:21,266 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:21,271 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:21,280 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:21,286 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:21,286 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:21,287 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:58:21,287 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:58:21,290 - primes.generator.generator - INFO - Sorting data
+2015-03-09 17:58:52,322 - primes.generator.generator - INFO - ['3.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 17:58:52,322 - primes.generator.generator - INFO - Checking cache
+2015-03-09 17:58:52,335 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:52,340 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:52,351 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:52,356 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:52,366 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:52,371 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 17:58:52,372 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 17:58:52,372 - primes.generator.generator - INFO - Data length 169
+2015-03-09 17:58:52,372 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 17:58:52,376 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:00:18,628 - primes.generator.generator - INFO - Retrieving path info
+2015-03-09 18:00:18,628 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/5.dat
+2015-03-09 18:01:32,187 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:01:32,187 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:01:32,200 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:01:32,205 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:01:32,215 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:01:32,220 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:01:32,230 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:01:32,235 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:01:32,245 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:01:32,250 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:01:32,251 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:01:32,251 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:01:32,251 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:01:32,259 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:02:26,857 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:02:26,857 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:02:26,870 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:02:26,876 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:02:26,886 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:02:27,910 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:02:27,920 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:02:28,944 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:02:28,954 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:02:29,978 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:02:29,979 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:02:29,980 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:02:29,981 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:02:29,986 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:06:09,278 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:06:09,278 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:06:09,290 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:06:46,657 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:06:46,658 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:06:46,670 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:06:46,676 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:06:46,686 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:06:51,104 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:06:51,113 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:06:55,534 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:06:55,543 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:06:59,964 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:06:59,964 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:07:00,085 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:07:00,085 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:07:00,090 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:08:41,459 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:08:41,460 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:08:41,472 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,409 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:08:59,410 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:08:59,422 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,423 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:08:59,433 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,434 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:08:59,444 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,444 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:08:59,454 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,455 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:08:59,456 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:08:59,456 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:08:59,457 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:08:59,465 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:09:18,606 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat']
+2015-03-09 18:09:18,607 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:09:18,619 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:09:18,620 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:09:18,630 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:09:18,631 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:09:18,640 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:09:18,641 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:09:18,651 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:09:18,651 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:09:18,652 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:09:18,652 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:09:18,653 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:09:18,661 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:09:18,673 - primes.generator.generator - INFO - Retrieving path info
+2015-03-09 18:09:18,674 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/6.dat
+2015-03-09 18:10:12,955 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat', '6.dat']
+2015-03-09 18:10:12,955 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:10:12,967 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:12,968 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:10:12,979 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:12,979 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:10:12,989 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:12,990 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:10:13,000 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:13,000 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:10:13,001 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:13,002 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:10:13,010 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:10:13,011 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:10:13,011 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:10:13,021 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:11:42,333 - primes.generator.generator - INFO - Retrieving path info
+2015-03-09 18:11:42,333 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/7.dat
+2015-03-09 18:14:16,939 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-03-09 18:14:16,940 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-03-09 18:14:16,940 - primes.generator.generator - INFO - ['3.dat', '5.dat', '4.dat', '2.dat', '1.dat', '6.dat', '7.dat']
+2015-03-09 18:14:16,940 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:14:16,953 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,954 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:16,965 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,965 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:16,975 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,976 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:16,985 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,986 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:16,987 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,987 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:14:16,997 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:16,998 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:17,008 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:14:17,009 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:14:17,009 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:14:17,019 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:14:17,028 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-03-09 18:15:44,048 - primes.generator.generator - INFO - Retrieving path info
+2015-03-09 18:15:44,049 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/8.dat
+2015-03-09 18:15:44,100 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-03-09 18:19:55,958 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-03-09 18:19:55,958 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-03-09 18:19:55,958 - primes.generator.generator - INFO - ['3.dat', '8.dat', '5.dat', '4.dat', '2.dat', '1.dat', '6.dat', '7.dat']
+2015-03-09 18:19:55,959 - primes.generator.generator - INFO - Checking cache
+2015-03-09 18:19:55,971 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:55,972 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:55,983 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:55,984 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:55,994 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:55,995 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:56,005 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:56,006 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:56,015 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:56,016 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:56,017 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:56,017 - primes.generator.generator - INFO - Data length 169
+2015-03-09 18:19:56,027 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:56,027 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:56,036 - primes.generator.generator - INFO - Finding pertinent data (0 - 62750)
+2015-03-09 18:19:56,037 - primes.generator.generator - INFO - Data length 6298
+2015-03-09 18:19:56,037 - primes.generator.generator - INFO - Removing duplicates
+2015-03-09 18:19:56,048 - primes.generator.generator - INFO - Sorting data
+2015-03-09 18:19:56,057 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-03-09 18:20:50,807 - primes.generator.generator - INFO - Retrieving path info
+2015-03-09 18:20:50,807 - primes.generator.generator - INFO - Writing data to file primes/generator/data/primes/9.dat
+2015-03-09 18:20:50,858 - primes.visualisation.ulam.ulam - INFO - writing to image

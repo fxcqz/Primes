@@ -5,9 +5,7 @@ from primes.utils.custom_complex import CustomComplex
 import numpy
 
 
-# TODO:
-# use cached data
-log.setup_logging()
+#log.setup_logging()
 logger = logging.getLogger(__name__)
 
 class Generator(object):
@@ -23,7 +21,11 @@ class Generator(object):
     def generate(self):
         pass
 
+    def get_data(self):
+        return self.data
+
     # cache read
+    # TODO: optimise by not reading redundant data
 
     def data_files_from_dir(self):
         return filter(lambda x: ".dat" in x, list(os.walk(self.path))[0][2])
@@ -32,21 +34,23 @@ class Generator(object):
         files = self.data_files_from_dir()
         logger.info(files)
         data = None
+        tdata = []
         logger.info("Checking cache")
         for f_ in files:
             with open(self.path + f_, 'r') as f:
                 data = numpy.loadtxt(f, delimiter=',', dtype=self.datatype)
                 logger.info("Finding pertinent data (%s - %s)", self.minimum, self.maximum)
-                data = filter(lambda x: self.minimum <= x <= self.maximum, data)
+                tdata += list(data)
                 logger.info("Data length %s", str(len(data)))
-        if data:
+        if tdata:
             logger.info("Removing duplicates")
-            data = list(set(data))
+            tdata = list(set(tdata))
+            tdata = filter(lambda x: self.minimum <= x <= self.maximum, tdata)
             logger.info("Sorting data")
-            data.sort()
+            tdata.sort()
         else:
             logger.info("No data found in cache")
-        return data
+        return numpy.array(tdata)
 
     def complex_range(self, minimum, maximum):
         zs = []
