@@ -24,14 +24,13 @@ class Generator(generator.Generator):
         logger.info("Checking cache")
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
-        if self.data:
-            if len(cache_miss[0]) + len(cache_miss[1]) < self.threshold:
-                for n in cache_miss[0]:
-                    if self.is_gaussian_prime(n):
-                        self.data.insert(0, n)
-                for n in cache_miss[1]:
-                    if self.is_gaussian_prime(n):
-                        self.data.append(n)
+        if len(cache_miss[0]) + len(cache_miss[1]) < self.threshold:
+            for n in cache_miss[0]:
+                if self.is_gaussian_prime(n):
+                    self.data.insert(0, n)
+            for n in cache_miss[1]:
+                if self.is_gaussian_prime(n):
+                    self.data.append(n)
         else:
             gaussians = []
             logger.info("Starting generation")
@@ -43,6 +42,7 @@ class Generator(generator.Generator):
                 logger.info("%s", str(i))
             logger.info("Writing data")
             self.data = np.array(gaussians)
+            self.to_file()
 
     def is_gaussian_prime(self, z):
         re = np.real(z)

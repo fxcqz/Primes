@@ -33,7 +33,7 @@ class Generator(generator.Generator):
     def generate(self):
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
-        if len(cache_miss) < self.threshold:
+        if len(cache_miss[0])+len(cache_miss[1]) < self.threshold:
             for l in cache_miss:
                 for n in l:
                     if self.is_prime(n):
@@ -47,3 +47,4 @@ class Generator(generator.Generator):
                     for j in self.j_increment(i):
                         numbers[j] = False
             self.data = numpy.array([i for i, j in enumerate(numbers) if j and i > 1])
+            self.to_file()
