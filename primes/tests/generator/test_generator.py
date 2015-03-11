@@ -23,9 +23,8 @@ def test_read_cache():
     g.path = "./data/"
     data = g.read_cache()
     assert_equals(list(data), [2, 3, 5, 7])
-    g.maximum = 1000
     data = g.read_cache()
-    assert_equals(list(data)[-1], 997)
+    assert_equals(list(data)[-1], 7)
 
 def test_complex_range():
     g = generator.Generator()
@@ -35,10 +34,10 @@ def test_complex_range():
     assert_equals(r[-1], complex(4, 4))
 
 def test_not_in_cache():
-    g = generator.Generator(maximum=1000)
+    g = generator.Generator(maximum=10)
     g.path = "./data/"
     g.data = g.read_cache()
-    assert_equals(g.not_in_cache(), ([0, 1], [998, 999, 1000]))
+    assert_equals(g.not_in_cache(), ([0, 1], [8, 9, 10]))
 
 def test_complex_not_in_cache():
     g = generator.Generator(complex(-2, -2), complex(2, 2))

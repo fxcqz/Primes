@@ -10,9 +10,11 @@ import numpy
 logger = logging.getLogger(__name__)
 
 class Generator(generator.Generator):
-    def __init__(self, minimum=0, maximum=1):
+    def __init__(self, minimum=0, maximum=2):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/primes/"
+        if self.maximum < 2:
+            self.maximum = 2
 
     def is_prime(self, n):
         # TODO: use a better primality test
@@ -42,7 +44,7 @@ class Generator(generator.Generator):
         else:
             logger.info("Starting prime generation")
             numbers = [True] * (self.maximum + 1)
-            for i in range(2, int(math.sqrt(self.maximum))):
+            for i in range(2, int(math.sqrt(self.maximum)) + 1):
                 if numbers[i]:
                     for j in self.j_increment(i):
                         numbers[j] = False

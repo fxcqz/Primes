@@ -5,3 +5,4 @@ dependencies:
 * numpy
 * Pillow
 * PyQt 4
+* nosetests
