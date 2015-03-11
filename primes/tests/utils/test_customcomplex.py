@@ -4,6 +4,7 @@ import numpy
 
 
 def test_complex_init():
+    # 2 ways of instantiating custom complex
     a = CustomComplex(2, 3)
     assert_equals(numpy.real(a), 2)
     assert_equals(numpy.imag(a), 3)
@@ -13,6 +14,7 @@ def test_complex_init():
 
 def test_cc_eq():
     assert_true(CustomComplex(0, 0) == CustomComplex(0, 0))
+    assert_false(CustomComplex(1, 0) == CustomComplex(0, 1))
     assert_false(CustomComplex(0, 0) == CustomComplex(1, 1))
 
 def test_cc_lt():

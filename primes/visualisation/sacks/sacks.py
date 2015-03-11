@@ -22,6 +22,8 @@ class SacksSpiral():
         for point in self.generator.data:
             coords = coordinates.pol_to_cart(np.sqrt(point), np.sqrt(point) * 2 * np.pi)
             # TODO: use circles instead of pixels
-            pix[int(coords[0]) + self.width / 2, int(coords[1]) + self.height / 2] = \
-                self.settings["colour"]
+            x = int(coords[0]) + self.width / 2
+            y = int(coords[1]) + self.height / 2
+            if 0 <= x < self.width and 0 <= y < self.height:
+                pix[x, y] = self.settings["colour"]
         img.save(imagename)
