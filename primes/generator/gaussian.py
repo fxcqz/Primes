@@ -9,7 +9,7 @@ log.setup_logging()
 logger = logging.getLogger(__name__)
 
 class Generator(generator.Generator):
-    def __init__(self, minimum=0, maximum=1):
+    def __init__(self, minimum=complex(0, 0), maximum=complex(1, 1)):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/gaussians/"
         self.datatype = complex
@@ -24,7 +24,7 @@ class Generator(generator.Generator):
         logger.info("Checking cache")
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
-        if len(cache_miss[0]) + len(cache_miss[1]) < self.threshold:
+        if cache_miss:
             for n in cache_miss[0]:
                 if self.is_gaussian_prime(n):
                     self.data.insert(0, n)

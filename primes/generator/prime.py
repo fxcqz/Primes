@@ -33,7 +33,7 @@ class Generator(generator.Generator):
     def generate(self):
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
-        if len(cache_miss[0])+len(cache_miss[1]) < self.threshold:
+        if cache_miss:
             for l in cache_miss:
                 for n in l:
                     if self.is_prime(n):

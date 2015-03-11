@@ -29,7 +29,7 @@ class UlamSpiral():
         if self.direction == 3:
             self.current_x += 1
 
-    def generate_ulam(self):
+    def generate(self):
         logger.info("generating data")
         self.generator.generate()
         logger.info("starting ulam")
@@ -43,12 +43,10 @@ class UlamSpiral():
                 self.delta += 1
             self.direction = (self.direction + 1) % 4
             self.side += 1
-        #self.generator.to_file()
 
     def to_image(self, imagename):
         logger.info("generating image")
-        if not self.output:
-            self.generate_ulam()
+        self.generate()
         logger.info("writing to image")
         img = Image.new("RGBA", (self.width, self.height), self.settings["bgcolour"])
         pix = img.load()
