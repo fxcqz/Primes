@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'first.io'
 #
-# Created: Fri Mar 13 17:07:24 2015
+# Created: Fri Mar 13 17:49:50 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -205,6 +205,8 @@ class Ui_MainWindow(object):
         self.img_layout_choice = QtGui.QComboBox(self.formLayoutWidget)
         self.img_layout_choice.setEditable(False)
         self.img_layout_choice.setObjectName(_fromUtf8("img_layout_choice"))
+        self.img_layout_choice.addItem(_fromUtf8(""))
+        self.img_layout_choice.addItem(_fromUtf8(""))
         self.formLayout.setWidget(0, QtGui.QFormLayout.FieldRole, self.img_layout_choice)
         self.lab_dataset = QtGui.QLabel(self.formLayoutWidget)
         self.lab_dataset.setObjectName(_fromUtf8("lab_dataset"))
@@ -212,6 +214,7 @@ class Ui_MainWindow(object):
         self.img_dataset_choice = QtGui.QComboBox(self.formLayoutWidget)
         self.img_dataset_choice.setEditable(False)
         self.img_dataset_choice.setObjectName(_fromUtf8("img_dataset_choice"))
+        self.img_dataset_choice.addItem(_fromUtf8(""))
         self.formLayout.setWidget(1, QtGui.QFormLayout.FieldRole, self.img_dataset_choice)
         self.groupBox_2 = QtGui.QGroupBox(self.imgtab)
         self.groupBox_2.setGeometry(QtCore.QRect(3, 100, 191, 141))
@@ -354,7 +357,10 @@ class Ui_MainWindow(object):
         self.generate.setText(_translate("MainWindow", "Generate", None))
         self.groupBox.setTitle(_translate("MainWindow", "Visualisation", None))
         self.lab_layout.setText(_translate("MainWindow", "Layout", None))
+        self.img_layout_choice.setItemText(0, _translate("MainWindow", "Ulam Spiral", None))
+        self.img_layout_choice.setItemText(1, _translate("MainWindow", "Sacks Spiral", None))
         self.lab_dataset.setText(_translate("MainWindow", "Dataset", None))
+        self.img_dataset_choice.setItemText(0, _translate("MainWindow", "Primes", None))
         self.groupBox_2.setTitle(_translate("MainWindow", "Settings", None))
         self.lab_width.setText(_translate("MainWindow", "Width", None))
         self.lab_height.setText(_translate("MainWindow", "Height", None))
