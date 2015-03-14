@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'first.io'
 #
-# Created: Fri Mar 13 18:25:08 2015
+# Created: Sat Mar 14 17:24:11 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -371,6 +371,8 @@ class Ui_MainWindow(object):
         self.groupBox_4.setTitle(_translate("MainWindow", "Colours", None))
         self.lab_bg.setText(_translate("MainWindow", "BG", None))
         self.lab_fg.setText(_translate("MainWindow", "FG", None))
+        self.img_bgcolour_choice.setText(_translate("MainWindow", "#000000", None))
+        self.img_fgcolour_choice.setText(_translate("MainWindow", "#FFFFFF", None))
         self.img_bg_picker.setText(_translate("MainWindow", "Choose", None))
         self.img_fg_picker.setText(_translate("MainWindow", "Choose", None))
         self.settings_tab.setTabText(self.settings_tab.indexOf(self.imgtab), _translate("MainWindow", "Image", None))

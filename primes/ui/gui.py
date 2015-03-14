@@ -2,6 +2,9 @@ import sys
 from PyQt4 import QtGui, QtCore
 from main_window import Ui_MainWindow
 
+import primes.visualisation.ulam.ulam as ulam
+import primes.generator.prime as prime
+
 
 class StartGui(QtGui.QMainWindow):
     def __init__(self, parent=None):
@@ -10,34 +13,39 @@ class StartGui(QtGui.QMainWindow):
         self.ui.setupUi(self)
         self.make_connections()
         # VISUALISATION VARIABLES
+        self.visualisation = None
         self.layout = None
         self.dataset = None
-        self.width = None
-        self.height = None
-        self.range_min = None
-        self.range_max = None
-        self.bgcolour = None
-        self.fgcolour = None
+        self.width = 0
+        self.height = 0
+        self.range_min = 0
+        self.range_max = 1000
+        self.bgcolour = QtGui.QColor(0, 0, 0)
+        self.fgcolour = QtGui.QColor(255, 255, 255)
 
     def make_connections(self):
         QtCore.QObject.connect(self.ui.img_bg_picker, QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("bg"))
         QtCore.QObject.connect(self.ui.img_fg_picker, QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("fg"))
-        QtCore.QObject.connect(self.ui.img_width_choice, QtCore.SIGNAL("valueChanged()"), lambda: self.update_from_spin("width"))
         QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), self.generate)
 
-    def update_from_spin(self, arg):
-        print "called"
-        if arg == "width":
-            self.width = int(self.ui.img_width_choice.value())
-
     def generate(self):
+        # QCOMBO_BOX TEXT RETRIEVED VIA currentText
+        print self.ui.img_layout_choice.currentText()
         layout = None
         dataset = None
-        width = None
-        height = None
-        range_min = None
-        range_max = None
-        print self.width
+        self.width = int(self.ui.img_width_choice.value())
+        self.height = int(self.ui.img_height_choice.value())
+        self.range_min = int(self.ui.img_rmin_choice.value())
+        self.range_max = int(self.ui.img_rmax_choice.value())
+        # NEED SOME CHECK FOR COLOUR CHANGED FROM TEXT ONLY
+        u = ulam.UlamSpiral(prime.Generator,
+                            {"min": self.range_min,
+                             "max": self.range_max,
+                             "width": self.width,
+                             "height": self.height,
+                             "colour": self.fgcolour.getRgb(),
+                             "bgcolour": self.bgcolour.getRgb()})
+        #u.to_image("test.png")
 
     def colour_picker(self, src):
         picker = QtGui.QColorDialog(parent=self)
