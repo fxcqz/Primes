@@ -35,12 +35,11 @@ class StartGui(QtGui.QMainWindow):
         gen_t.start()
         gen_t.join()
         self.ui.progress_bar.hide()
-        display = QtGui.QPixmap(411, 421)
-        if display.load("primes/tmp/v.png"):
-            self.ui.visualisation = QtGui.QLabel()
-            self.ui.visualisation.setPixmap(display)
-        else:
-            print False
+        scn = QtGui.QGraphicsScene(self.ui.visualisation)
+        self.ui.visualisation.setScene(scn)
+        display = QtGui.QPixmap("primes/tmp/v.png")
+        scn.addPixmap(display)
+        self.ui.visualisation.show()
 
     def generate(self):
         # QCOMBO_BOX TEXT RETRIEVED VIA currentText
