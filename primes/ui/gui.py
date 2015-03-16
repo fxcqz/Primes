@@ -4,8 +4,7 @@ from PyQt4 import QtGui, QtCore
 from threading import Thread
 from main_window import Ui_MainWindow
 
-import primes.visualisation.ulam.ulam as ulam
-import primes.generator.prime as prime
+import primes.utils.handles as handles
 
 
 class StartGui(QtGui.QMainWindow):
@@ -17,8 +16,8 @@ class StartGui(QtGui.QMainWindow):
         self.ui.progress_bar.hide()
         # VISUALISATION VARIABLES
         self.visualisation = None
-        self.layout = None
-        self.dataset = None
+        self.layout = handles.visualisations["Ulam Spiral"]
+        self.dataset = handles.generators["Primes"]
         self.width = 0
         self.height = 0
         self.range_min = 0
@@ -48,8 +47,8 @@ class StartGui(QtGui.QMainWindow):
         self.ui.generate.setEnabled(False)
         self.ui.generate.setText("Generating...")
         # QCOMBO_BOX TEXT RETRIEVED VIA currentText
-        layout = None
-        dataset = None
+        self.layout = handles.visualisations[str(self.ui.img_layout_choice.currentText())]
+        self.dataset = handles.generators[str(self.ui.img_dataset_choice.currentText())]
         self.width = int(self.ui.img_width_choice.value())
         self.height = int(self.ui.img_height_choice.value())
         self.range_min = int(self.ui.img_rmin_choice.value())
@@ -57,7 +56,7 @@ class StartGui(QtGui.QMainWindow):
         self.bgcolour.setNamedColor(self.ui.img_bgcolour_choice.displayText())
         self.fgcolour.setNamedColor(self.ui.img_fgcolour_choice.displayText())
         # NEED SOME CHECK FOR COLOUR CHANGED FROM TEXT ONLY
-        self.visualisation = ulam.UlamSpiral(prime.Generator,
+        self.visualisation = self.layout(self.dataset.Generator,
                             {"min": self.range_min,
                              "max": self.range_max,
                              "width": self.width,
