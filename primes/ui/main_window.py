@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'first.io'
 #
-# Created: Sat Mar 14 17:24:11 2015
+# Created: Mon Mar 16 13:17:22 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -312,6 +312,28 @@ class Ui_MainWindow(object):
         self.visualisation = QtGui.QWidget(self.centralwidget)
         self.visualisation.setGeometry(QtCore.QRect(10, 10, 411, 421))
         self.visualisation.setObjectName(_fromUtf8("visualisation"))
+        self.progress_bar = QtGui.QProgressBar(self.visualisation)
+        self.progress_bar.setEnabled(True)
+        self.progress_bar.setGeometry(QtCore.QRect(160, 190, 118, 21))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(216, 78, 80))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Highlight, brush)
+        brush = QtGui.QBrush(QtGui.QColor(216, 78, 80))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Highlight, brush)
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 128))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Highlight, brush)
+        self.progress_bar.setPalette(palette)
+        self.progress_bar.setMaximum(0)
+        self.progress_bar.setProperty("value", -1)
+        self.progress_bar.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.progress_bar.setTextVisible(True)
+        self.progress_bar.setOrientation(QtCore.Qt.Horizontal)
+        self.progress_bar.setInvertedAppearance(False)
+        self.progress_bar.setFormat(_fromUtf8(""))
+        self.progress_bar.setObjectName(_fromUtf8("progress_bar"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtGui.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 640, 19))

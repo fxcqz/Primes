@@ -1,5 +1,6 @@
 import sys
 from PyQt4 import QtGui, QtCore
+from threading import Thread
 from main_window import Ui_MainWindow
 
 import primes.visualisation.ulam.ulam as ulam
@@ -12,6 +13,7 @@ class StartGui(QtGui.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.make_connections()
+        self.ui.progress_bar.hide()
         # VISUALISATION VARIABLES
         self.visualisation = None
         self.layout = None
@@ -28,8 +30,21 @@ class StartGui(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.img_fg_picker, QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("fg"))
         QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), self.generate)
 
+    def show_visualisation(self):
+        gen_t = Thread(target=self.visualisation.to_image, args=("primes/tmp/v.png",))
+        gen_t.start()
+        gen_t.join()
+        self.ui.progress_bar.hide()
+        display = QtGui.QPixmap(411, 421)
+        if display.load("primes/tmp/v.png"):
+            self.ui.visualisation = QtGui.QLabel()
+            self.ui.visualisation.setPixmap(display)
+        else:
+            print False
+
     def generate(self):
         # QCOMBO_BOX TEXT RETRIEVED VIA currentText
+        self.ui.progress_bar.show()
         print self.ui.img_layout_choice.currentText()
         layout = None
         dataset = None
@@ -38,14 +53,14 @@ class StartGui(QtGui.QMainWindow):
         self.range_min = int(self.ui.img_rmin_choice.value())
         self.range_max = int(self.ui.img_rmax_choice.value())
         # NEED SOME CHECK FOR COLOUR CHANGED FROM TEXT ONLY
-        u = ulam.UlamSpiral(prime.Generator,
+        self.visualisation = ulam.UlamSpiral(prime.Generator,
                             {"min": self.range_min,
                              "max": self.range_max,
                              "width": self.width,
                              "height": self.height,
                              "colour": self.fgcolour.getRgb(),
                              "bgcolour": self.bgcolour.getRgb()})
-        #u.to_image("test.png")
+        self.show_visualisation()
 
     def colour_picker(self, src):
         picker = QtGui.QColorDialog(parent=self)
