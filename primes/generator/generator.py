@@ -14,6 +14,7 @@ class Generator(object):
         self.maximum = maximum
         self.path = "primes/generator/data/"
         self.datatype = int
+        self.runnable = True
         # maximum number of elements missing from cache to do full generation
         self.threshold = 100
         self.data = []

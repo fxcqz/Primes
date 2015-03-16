@@ -13,6 +13,8 @@ class Generator(generator.Generator):
     def __init__(self, minimum=0, maximum=2):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/primes/"
+        if self.minimum < 2 and self.maximum < 2:
+            self.runnable = False
 
     def is_prime(self, n):
         # TODO: use a better primality test
