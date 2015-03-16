@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'first.io'
 #
-# Created: Mon Mar 16 13:57:36 2015
+# Created: Mon Mar 16 14:45:06 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -313,7 +313,7 @@ class Ui_MainWindow(object):
         self.visualisation.setGeometry(QtCore.QRect(10, 10, 411, 421))
         self.visualisation.setObjectName(_fromUtf8("visualisation"))
         self.progress_bar = QtGui.QProgressBar(self.centralwidget)
-        self.progress_bar.setGeometry(QtCore.QRect(160, 200, 118, 23))
+        self.progress_bar.setGeometry(QtCore.QRect(433, 406, 191, 24))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(221, 92, 94))
         brush.setStyle(QtCore.Qt.SolidPattern)

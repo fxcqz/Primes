@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt4 import QtGui, QtCore
 from threading import Thread
 from main_window import Ui_MainWindow
@@ -31,26 +32,30 @@ class StartGui(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), self.generate)
 
     def show_visualisation(self):
+        QtGui.QApplication.processEvents()
         gen_t = Thread(target=self.visualisation.to_image, args=("primes/tmp/v.png",))
         gen_t.start()
         gen_t.join()
-        self.ui.progress_bar.hide()
         scn = QtGui.QGraphicsScene(self.ui.visualisation)
         self.ui.visualisation.setScene(scn)
         display = QtGui.QPixmap("primes/tmp/v.png")
         scn.addPixmap(display)
         self.ui.visualisation.show()
+        self.ui.generate.setEnabled(True)
+        self.ui.generate.setText("Generate")
 
     def generate(self):
+        self.ui.generate.setEnabled(False)
+        self.ui.generate.setText("Generating...")
         # QCOMBO_BOX TEXT RETRIEVED VIA currentText
-        self.ui.progress_bar.show()
-        print self.ui.img_layout_choice.currentText()
         layout = None
         dataset = None
         self.width = int(self.ui.img_width_choice.value())
         self.height = int(self.ui.img_height_choice.value())
         self.range_min = int(self.ui.img_rmin_choice.value())
         self.range_max = int(self.ui.img_rmax_choice.value())
+        self.bgcolour.setNamedColor(self.ui.img_bgcolour_choice.displayText())
+        self.fgcolour.setNamedColor(self.ui.img_fgcolour_choice.displayText())
         # NEED SOME CHECK FOR COLOUR CHANGED FROM TEXT ONLY
         self.visualisation = ulam.UlamSpiral(prime.Generator,
                             {"min": self.range_min,
@@ -65,11 +70,13 @@ class StartGui(QtGui.QMainWindow):
         picker = QtGui.QColorDialog(parent=self)
         colour = picker.getColor()
         if src == "bg":
-            self.ui.img_bgcolour_choice.setText(str(colour.name()))
-            self.bgcolour = colour
+            if colour.isValid():
+                self.ui.img_bgcolour_choice.setText(str(colour.name()))
+                self.bgcolour = colour
         elif src == "fg":
-            self.ui.img_fgcolour_choice.setText(str(colour.name()))
-            self.fgcolour = colour
+            if colour.isValid():
+                self.ui.img_fgcolour_choice.setText(str(colour.name()))
+                self.fgcolour = colour
 
 def run(argv):
     app = QtGui.QApplication(argv)
