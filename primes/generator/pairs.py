@@ -19,6 +19,8 @@ class Generator(generator.Generator):
         self.gap = 0
 
     def set_gap(self, n):
+        # might  be better to load gap from settings
+        # e.g. settings["gap"] or 2 is none present
         self.gap = n
 
     def generate(self):
@@ -33,6 +35,8 @@ class Generator(generator.Generator):
                         self.data.append(v)
             self.data.sort()
         else:
+            del self.data
+            self.data = []
             for i, p in enumerate(self.primes):
                 if (p - self.gap) in self.primes[:i]:
                     self.data.append(p)
