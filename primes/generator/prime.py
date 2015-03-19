@@ -5,6 +5,7 @@ import generator
 import logging
 import primes.utils.logger as log
 import numpy
+import primes.utils.primality as primality
 
 
 logger = logging.getLogger(__name__)
@@ -16,18 +17,6 @@ class Generator(generator.Generator):
         if self.minimum < 2 and self.maximum < 2:
             self.runnable = False
 
-    def is_prime(self, n):
-        # TODO: use a better primality test
-        # http://en.wikipedia.org/wiki/Primality_test
-        if n <= 3:
-            return n >= 2
-        if n % 2 == 0 or n % 3 == 0:
-            return False
-        for i in range(5, int(n ** 0.5) + 1, 6):
-            if n % i == 0 or n % (i + 2) == 0:
-                return False
-        return True
-
     def j_increment(self, j):
         return [int(math.pow(j, 2) + (n * j)) for n in
                 itertools.takewhile(lambda x: int(math.pow(j, 2) + (x * j)) <= self.maximum, range(0, self.maximum))]
@@ -38,7 +27,7 @@ class Generator(generator.Generator):
         if cache_miss:
             for l in cache_miss:
                 for n in l:
-                    if self.is_prime(n):
+                    if primality.is_prime(n):
                         self.data.append(n)
             self.data.sort()
         else:
