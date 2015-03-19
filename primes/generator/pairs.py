@@ -12,6 +12,7 @@ class Generator(generator.Generator):
     def __init__(self, minimum=0, maximum=2):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/pairs/"
+        self.threshold = 500
         sieve = prime.Generator(maximum=self.maximum)
         sieve.generate()
         self.primes = sieve.data
