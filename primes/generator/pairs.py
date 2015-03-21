@@ -12,11 +12,10 @@ class Generator(generator.Generator):
     def __init__(self, minimum=0, maximum=2):
         super(self.__class__, self).__init__(minimum, maximum)
         self.path = "primes/generator/data/pairs/"
-        self.threshold = 500
         sieve = prime.Generator(maximum=self.maximum)
         sieve.generate()
         self.primes = sieve.data
-        self.gap = 0
+        self.gap = 2
 
     def set_gap(self, n):
         # might  be better to load gap from settings
@@ -29,11 +28,13 @@ class Generator(generator.Generator):
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
         if cache_miss:
+            self.data = list(self.data)
             for l in cache_miss:
                 for v in l:
                     if primality.is_prime(v) and primality.is_prime(v-self.gap):
                         self.data.append(v)
             self.data.sort()
+            self.data = numpy.array(self.data)
         else:
             del self.data
             self.data = []
@@ -41,4 +42,5 @@ class Generator(generator.Generator):
                 if (p - self.gap) in self.primes[:i]:
                     self.data.append(p)
             self.data.sort()
+            self.data = numpy.array(self.data)
             self.to_file()

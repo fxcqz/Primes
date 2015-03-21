@@ -25,11 +25,13 @@ class Generator(generator.Generator):
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
         if cache_miss:
+            self.data = list(self.data)
             for l in cache_miss:
                 for n in l:
                     if primality.is_prime(n):
                         self.data.append(n)
             self.data.sort()
+            self.data = numpy.array(self.data)
         else:
             logger.info("Starting prime generation")
             numbers = [True] * (self.maximum + 1)

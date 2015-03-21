@@ -25,12 +25,14 @@ class Generator(generator.Generator):
         self.data = self.read_cache()
         cache_miss = self.not_in_cache()
         if cache_miss:
+            self.data = list(self.data)
             for n in cache_miss[0]:
                 if self.is_gaussian_prime(n):
                     self.data.insert(0, n)
             for n in cache_miss[1]:
                 if self.is_gaussian_prime(n):
                     self.data.append(n)
+            self.data = np.array(self.data)
         else:
             gaussians = []
             logger.info("Starting generation")

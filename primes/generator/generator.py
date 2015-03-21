@@ -63,14 +63,6 @@ class Generator(object):
                 zs.append(CustomComplex(i, j))
         return zs
 
-    #def not_in_cache(self):
-    #    if self.datatype == complex:
-    #        return filter(lambda x: CustomComplex(self.minimum) <= x < CustomComplex(self.data[0]),
-    #                                self.complex_range(self.minimum, self.data[0])), \
-    #               filter(lambda x: CustomComplex(self.data[-1]) < x <= CustomComplex(self.maximum),
-    #                                self.complex_range(self.data[-1], self.maximum))
-    #    return filter(lambda x: self.minimum <= x < min(self.data), range(self.minimum, min(self.data))), \
-    #           filter(lambda x: max(self.data) < x <= self.maximum, range(max(self.data), self.maximum + 1))
     def not_in_cache(self):
         ret = None
         if len(self.data) != 0:
