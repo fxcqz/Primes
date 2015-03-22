@@ -8,7 +8,7 @@ import primes.visualisation.ulam.ulam as ulam
 import primes.visualisation.sacks.sacks as sacks
 import primes.visualisation.cloud.cloud as cloud
 import primes.visualisation.plaincomplex.plaincomplex as plaincomplex
-import primes.ui.ngui as gui
+import primes.ui.gui as gui
 import time
 
 

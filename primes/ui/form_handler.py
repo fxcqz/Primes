@@ -1,6 +1,7 @@
 from PyQt4 import QtGui, QtCore
 
-from forms.form_ulam import Ui_FormUlam
+from forms.ulam.form import Ui_FormUlam
+import forms.ulam.handler as ulam_handler
 
 
 class FormWrapper(QtGui.QWidget):
@@ -27,24 +28,18 @@ class FormHandler():
         form.setParent(self.parent)
         self.form_wrapper = form
         self.setup_connections(name)
-        print self.retrieve_data()
 
     def setup_connections(self, name):
         if name == "ulam":
-            QtCore.QObject.connect(self.form_wrapper.form.dataset, \
-                QtCore.SIGNAL("activated(QString)"), \
-                lambda: self.form_wrapper.form.gap.setEnabled(True) \
-                        if self.form_wrapper.form.dataset.currentText() == "Prime Pairs" \
-                        else self.form_wrapper.form.gap.setEnabled(False))
+            ulam_handler.conn(self.form_wrapper.form)
 
     def retrieve_data(self):
+        ret = None
         if self.form_wrapper:
             form = self.form_wrapper.form
             if self.form_wrapper.name == "ulam":
-                gap = int(form.gap.value())
-                if str(form.dataset.currentText()) != "Prime Pairs":
-                    gap = None
-                return str(form.dataset.currentText()), int(form.min_.value()), int(form.max_.value()), gap
+                ret = ulam_handler.retrieve(form)
+        return ret
 
     def remove_form(self):
         self.form_wrapper.setParent(None)
