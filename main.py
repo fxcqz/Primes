@@ -24,7 +24,7 @@ def main():
     #c.to_image("test.png")
     #p.to_image("test.png")
     #print time.time() - start, "seconds"
-    #gui.run(sys.argv)
+    gui.run(sys.argv)
 
 
 if __name__ == '__main__':
