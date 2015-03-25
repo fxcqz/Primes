@@ -18,9 +18,24 @@ class StartGui(QtGui.QMainWindow):
         self.form_handler.setup_form("ulam")
 
     def setup_connections(self):
+        # layout form swapper
         QtCore.QObject.connect(self.ui.f_layout, \
             QtCore.SIGNAL("currentIndexChanged(QString)"), \
             lambda: self.form_swapper(self.ui.f_layout.currentText()))
+        # colour pickers
+        QtCore.QObject.connect(self.ui.f_fg_button, \
+            QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("fg"))
+        QtCore.QObject.connect(self.ui.f_bg_button, \
+            QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("bg"))
+
+    def colour_picker(self, src):
+        picker = QtGui.QColorDialog(parent=self)
+        colour = picker.getColor()
+        if colour.isValid():
+            if src == "fg":
+                self.ui.f_fg_text.setText(str(colour.name()))
+            elif src == "bg":
+                self.ui.f_bg_text.setText(str(colour.name()))
 
     def form_swapper(self, name):
         self.form_handler.remove_form()
