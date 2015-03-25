@@ -27,6 +27,44 @@ class StartGui(QtGui.QMainWindow):
             QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("fg"))
         QtCore.QObject.connect(self.ui.f_bg_button, \
             QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("bg"))
+        # generate
+        QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), \
+            self.generate)
+
+    def visualise(self, vis):
+        pass
+
+    def generate(self):
+        self.ui.generate.setEnabled(False)
+        self.ui.generate.setText("Generating...")
+        # core settings
+        form_data = self.form_handler.retrieve_data()
+        layout = handles.visualisations[str(self.ui.f_layout.currentText())]
+        dataset = handles.generators[form_data["dataset"]]
+        width = int(self.ui.f_width.value())
+        height = int(self.ui.f_height.value())
+        min_ = form_data["min"]
+        max_ = form_data["max"]
+        # error check these colours
+        bg_colour = QtGui.QColor(self.ui.f_bg_text.displayText())
+        fg_colour = QtGui.QColor(self.ui.f_fg_text.displayText())
+        visualisation = None
+        if width > 0 and height > 0 and min_ <= max_:
+            visualisation = layout(dataset.Generator,
+                {"min": min_, "max": max_, 
+                 "width": width, "height": height,
+                 "colour": fg_colour.getRgb(),
+                 "bgcolour": bg_colour.getRgb()})
+            try:
+                if form_data["dataset"] == "Prime Pairs":
+                    visualisation.generator.set_gap(form_data["gap"])
+            except KeyError:
+                pass
+            if not visualisation.generator.runnable:
+                visualisation = -1
+        else:
+            visualisation = -1
+        self.visualise(visualisation)
 
     def colour_picker(self, src):
         picker = QtGui.QColorDialog(parent=self)

@@ -13,5 +13,6 @@ def retrieve(form):
     gap = int(form.gap.value())
     if str(form.dataset.currentText()) != "Prime Pairs":
         gap = None
-    return str(form.dataset.currentText()), int(form.min_.value()), \
-           int(form.max_.value()), gap
+    return {"dataset": str(form.dataset.currentText()),
+            "min": int(form.min_.value()), "max": int(form.max_.value()),
+            "gap": gap}

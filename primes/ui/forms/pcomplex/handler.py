@@ -8,5 +8,6 @@ def conn(form):
 def retrieve(form):
     # some check for form of min/max input
     # prolly regex
-    return str(form.dataset.currentText()), int(form.min_.displayText()), \
-           int(form.max_.displayText())
+    return {"dataset": str(form.dataset.currentText()), \
+            "min": int(form.min_.displayText()), \
+            "max": int(form.max_.displayText())}
