@@ -28,6 +28,10 @@ class StartGui(QtGui.QMainWindow):
             self.form_handler.setup_form("ulam")
         elif name == "Sacks Spiral":
             self.form_handler.setup_form("sacks")
+        elif name == "Data Cloud":
+            self.form_handler.setup_form("cloud")
+        elif name == "Complex Plane":
+            self.form_handler.setup_form("complex")
 
 
 def run(argv):

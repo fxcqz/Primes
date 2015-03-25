@@ -2,9 +2,13 @@ from PyQt4 import QtGui, QtCore
 
 from forms.ulam.form import Ui_FormUlam
 from forms.sacks.form import Ui_FormSacks
+from forms.cloud.form import Ui_FormCloud
+from forms.pcomplex.form import Ui_FormComplex
 
 import forms.ulam.handler as ulam_handler
 import forms.sacks.handler as sacks_handler
+import forms.cloud.handler as cloud_handler
+import forms.pcomplex.handler as complex_handler
 
 
 class FormWrapper(QtGui.QWidget):
@@ -23,7 +27,9 @@ class FormHandler():
     def __init__(self, parent):
         self.parent = parent
         self.form_handles = {"ulam": Ui_FormUlam(),
-                             "sacks": Ui_FormSacks()}
+                             "sacks": Ui_FormSacks(),
+                             "cloud": Ui_FormCloud(),
+                             "complex": Ui_FormComplex()}
         self.form_wrapper = None
 
     def setup_form(self, name):
@@ -38,6 +44,10 @@ class FormHandler():
             ulam_handler.conn(self.form_wrapper.form)
         elif name == "sacks":
             sacks_handler.conn(self.form_wrapper.form)
+        elif name == "cloud":
+            cloud_handler.conn(self.form_wrapper.form)
+        elif name == "complex":
+            complex_handler.conn(self.form_wrapper.form)
 
     def retrieve_data(self):
         ret = None
@@ -47,6 +57,10 @@ class FormHandler():
                 ret = ulam_handler.retrieve(form)
             elif self.form_wrapper.name == "sacks":
                 ret = sacks_handler.retrieve(form)
+            elif self.form_wrapper.name == "cloud":
+                ret = cloud_handler.retrieve(form)
+            elif self.form_wrapper.name == "complex":
+                ret = cloud_handler.retrieve(form)
         return ret
 
     def remove_form(self):
