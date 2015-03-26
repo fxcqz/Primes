@@ -11,7 +11,7 @@ import primes.visualisation.plaincomplex.plaincomplex
 
 
 generators = {"Primes": primes.generator.prime,
-              "Guassians": primes.generator.gaussian,
+              "Gaussians": primes.generator.gaussian,
               "Prime Pairs": primes.generator.pairs}
 
 visualisations = {"Ulam Spiral": primes.visualisation.ulam.ulam.UlamSpiral,

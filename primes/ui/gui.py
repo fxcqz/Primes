@@ -32,7 +32,22 @@ class StartGui(QtGui.QMainWindow):
             self.generate)
 
     def visualise(self, vis):
-        pass
+        QtGui.QApplication.processEvents()
+        scn = QtGui.QGraphicsScene(self.ui.visualisation)
+        self.ui.visualisation.setScene(scn)
+        if vis != -1:
+            gen_t = Thread(target=vis.to_image, args=("primes/tmp/v.png",))
+            gen_t.start()
+            gen_t.join()
+            # maybe error check this filepath
+            display = QtGui.QPixmap("primes/tmp/v.png")
+            scn.addPixmap(display)
+        else:
+            scn.addText("Invalid Visualisation").setDefaultTextColor(QtGui.QColor(255, 255, 255))
+        self.ui.generate.setEnabled(True)
+        self.ui.generate.setText("Generate")
+        self.ui.main_tabs.setCurrentIndex(1)
+        self.ui.visualisation.show()
 
     def generate(self):
         self.ui.generate.setEnabled(False)

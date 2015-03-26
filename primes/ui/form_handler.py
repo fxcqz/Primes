@@ -60,7 +60,7 @@ class FormHandler():
             elif self.form_wrapper.name == "cloud":
                 ret = cloud_handler.retrieve(form)
             elif self.form_wrapper.name == "complex":
-                ret = cloud_handler.retrieve(form)
+                ret = complex_handler.retrieve(form)
         return ret
 
     def remove_form(self):
