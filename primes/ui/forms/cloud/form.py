@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'cloud.ui'
 #
-# Created: Sat Mar 28 00:18:08 2015
+# Created: Sat Mar 28 00:28:19 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -67,6 +67,17 @@ class Ui_FormCloud(object):
         self.label_4 = QtGui.QLabel(self.groupBox_2)
         self.label_4.setGeometry(QtCore.QRect(13, 22, 57, 14))
         self.label_4.setObjectName(_fromUtf8("label_4"))
+        self.mod_ = QtGui.QSpinBox(self.groupBox_2)
+        self.mod_.setEnabled(True)
+        self.mod_.setGeometry(QtCore.QRect(80, 48, 51, 20))
+        self.mod_.setMinimum(2)
+        self.mod_.setMaximum(100)
+        self.mod_.setSingleStep(1)
+        self.mod_.setProperty("value", 11)
+        self.mod_.setObjectName(_fromUtf8("mod_"))
+        self.label_5 = QtGui.QLabel(self.groupBox_2)
+        self.label_5.setGeometry(QtCore.QRect(20, 50, 57, 14))
+        self.label_5.setObjectName(_fromUtf8("label_5"))
 
         self.retranslateUi(FormCloud)
         QtCore.QMetaObject.connectSlotsByName(FormCloud)
@@ -81,4 +92,5 @@ class Ui_FormCloud(object):
         self.dataset.setItemText(1, _translate("FormCloud", "Prime Pairs", None))
         self.groupBox_2.setTitle(_translate("FormCloud", "Extras", None))
         self.label_4.setText(_translate("FormCloud", "Pair Gap", None))
+        self.label_5.setText(_translate("FormCloud", "Modulo", None))
 

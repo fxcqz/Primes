@@ -23,6 +23,13 @@ class Generator(generator.Generator):
         # e.g. settings["gap"] or 2 is none present
         self.gap = n
 
+    def set_specifics(self, data):
+        try:
+            if data["gap"]:
+                self.set_gap(data["gap"])
+        except KeyError:
+            pass
+
     def generate(self):
         self.path += str(self.gap) + "/"
         #logger.info("Checking cache")

@@ -25,6 +25,9 @@ class Generator(object):
     def get_data(self):
         return self.data
 
+    def set_specifics(self, data):
+        pass
+
     # cache read
     # TODO: optimise by not reading redundant data
 

@@ -1,20 +1,23 @@
 from PIL import Image
 import logging
+import primes.visualisation.generic as generic
 
 
 logger = logging.getLogger(__name__)
-class PrimeCloud():
+class PrimeCloud(generic.Generic):
     def __init__(self, generator, settings):
-        self.settings = settings
-        self.generator = generator(self.settings["min"], self.settings["max"])
-        self.width = self.settings["width"]
-        self.height = self.settings["height"]
-        self.limit = self.settings["max"]
+        super(self.__class__, self).__init__(generator, settings)
         self.current_x = int(self.width / 2)
         self.current_y = int(self.height / 2)
-        #self.current_x = 0
-        #self.current_y = 0
         self.output = []
+        self.mod = 11
+
+    def set_specifics(self, data):
+        try:
+            if data["mod"]:
+                self.mod = data["mod"]
+        except KeyError:
+            pass
 
     def bound_check(self):
         if self.current_x < 0:
@@ -47,7 +50,7 @@ class PrimeCloud():
         self.generator.generate()
         for counter in self.generator.data:
             # put the modulus in settings somewhere
-            x = counter % 16
+            x = counter % self.mod
             self.next_point(x)
             self.output[self.current_y][self.current_x] += 1000000
 

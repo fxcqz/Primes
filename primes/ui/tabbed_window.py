@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'tabbed.ui'
 #
-# Created: Sun Mar 22 20:17:47 2015
+# Created: Sat Mar 28 00:38:09 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -99,6 +99,7 @@ class Ui_MainWindow(object):
         self.f_graphics.setObjectName(_fromUtf8("f_graphics"))
         self.f_graphics.addItem(_fromUtf8(""))
         self.f_graphics.addItem(_fromUtf8(""))
+        self.f_graphics.addItem(_fromUtf8(""))
         self.label = QtGui.QLabel(self.groupBox_5)
         self.label.setGeometry(QtCore.QRect(20, 20, 61, 16))
         self.label.setObjectName(_fromUtf8("label"))
@@ -179,6 +180,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Layout", None))
         self.f_graphics.setItemText(0, _translate("MainWindow", "Image (png)", None))
         self.f_graphics.setItemText(1, _translate("MainWindow", "OpenGL", None))
+        self.f_graphics.setItemText(2, _translate("MainWindow", "Graphing", None))
         self.label.setText(_translate("MainWindow", "Graphics", None))
         self.generate.setText(_translate("MainWindow", "Generate", None))
         self.specific_settings.setTitle(_translate("MainWindow", "Specific", None))

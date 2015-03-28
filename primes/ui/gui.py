@@ -70,11 +70,8 @@ class StartGui(QtGui.QMainWindow):
                  "width": width, "height": height,
                  "colour": fg_colour.getRgb(),
                  "bgcolour": bg_colour.getRgb()})
-            try:
-                if form_data["dataset"] == "Prime Pairs":
-                    visualisation.generator.set_gap(form_data["gap"])
-            except KeyError:
-                pass
+            visualisation.generator.set_specifics(form_data)
+            visualisation.set_specifics(form_data)
             if not visualisation.generator.runnable:
                 visualisation = -1
         else:

@@ -3,17 +3,14 @@ from PIL import Image
 import numpy as np
 import logging
 import primes.utils.coordinates as coordinates
+import primes.visualisation.generic as generic
 
 
 logger = logging.getLogger(__name__)
-class SacksSpiral():
+class SacksSpiral(generic.Generic):
     def __init__(self, generator, settings):
-        self.settings = settings
-        self.generator = generator(self.settings["min"], self.settings["max"])
-        self.width = self.settings["width"]
-        self.height = self.settings["height"]
+        super(self.__class__, self).__init__(generator, settings)
         # TODO: maybe use pol to cart to determine width/height/limit
-        self.limit = self.settings["max"]
 
     def to_image(self, imagename):
         self.generator.generate()

@@ -1,16 +1,12 @@
 from PIL import Image
 import logging
+import primes.visualisation.generic as generic
 
 
 logger = logging.getLogger(__name__)
-class UlamSpiral():
+class UlamSpiral(generic.Generic):
     def __init__(self, generator, settings):
-        self.settings = settings
-        self.generator = generator(self.settings["min"], self.settings["max"])
-        self.width = self.settings["width"]
-        self.height = self.settings["height"]
-        #self.limit = self.width + (self.height * self.width)
-        self.limit = self.settings["max"]
+        super(self.__class__, self).__init__(generator, settings)
         self.current_x = int(self.width / 2)
         self.current_y = int(self.height / 2)
         self.delta = 1

@@ -15,4 +15,4 @@ def retrieve(form):
         gap = None
     return {"dataset": str(form.dataset.currentText()),
             "min": int(form.min_.value()), "max": int(form.max_.value()),
-            "gap": gap}
+            "gap": gap, "mod": int(form.mod_.value())}
