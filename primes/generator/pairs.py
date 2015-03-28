@@ -16,6 +16,7 @@ class Generator(generator.Generator):
         sieve.generate()
         self.primes = sieve.data
         self.gap = 2
+        self.threshold = 500
 
     def set_gap(self, n):
         # might  be better to load gap from settings
@@ -36,10 +37,9 @@ class Generator(generator.Generator):
             self.data.sort()
             self.data = numpy.array(self.data)
         else:
-            del self.data
             self.data = []
             for i, p in enumerate(self.primes):
-                if (p - self.gap) in self.primes[:i]:
+                if (p - self.gap) in self.primes:
                     self.data.append(p)
             self.data.sort()
             self.data = numpy.array(self.data)

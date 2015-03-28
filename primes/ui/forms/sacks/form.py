@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'sacks.ui'
 #
-# Created: Wed Mar 25 11:42:20 2015
+# Created: Sat Mar 28 00:18:47 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -61,7 +61,8 @@ class Ui_FormSacks(object):
         self.gap.setEnabled(False)
         self.gap.setGeometry(QtCore.QRect(80, 20, 51, 20))
         self.gap.setMinimum(2)
-        self.gap.setMaximum(10)
+        self.gap.setMaximum(100)
+        self.gap.setSingleStep(2)
         self.gap.setObjectName(_fromUtf8("gap"))
         self.label_4 = QtGui.QLabel(self.groupBox_2)
         self.label_4.setGeometry(QtCore.QRect(13, 22, 57, 14))
