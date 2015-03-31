@@ -6,3 +6,5 @@ dependencies:
 * Pillow
 * PyQt 4
 * nosetests
+* vispy
+* pyopengl
