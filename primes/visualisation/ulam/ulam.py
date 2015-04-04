@@ -1,6 +1,9 @@
 from PIL import Image
 import logging
+import math
 import primes.visualisation.generic as generic
+from primes.visualisation.gl_base import Canvas
+from vispy import app
 
 
 logger = logging.getLogger(__name__)
@@ -50,3 +53,15 @@ class UlamSpiral(generic.Generic):
             if p[0] in range(0, self.width) and p[1] in range(0, self.height):
                 pix[p[0], p[1]] = self.settings["colour"]
         img.save(imagename)
+
+    def to_gl(self):
+        new_lim = int(math.ceil(self.limit ** 0.5))
+        self.current_x = (new_lim**2/new_lim)/2
+        self.current_y = (new_lim**2/new_lim)/2
+        self.generate()
+        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, limit=self.limit, \
+            bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'])
+        for p in self.output:
+            canv.set_colour(self.settings['colour'], canv.grid, (p[0], p[1]))
+        canv.show()
+        app.run()

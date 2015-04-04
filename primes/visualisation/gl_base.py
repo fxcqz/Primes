@@ -64,9 +64,12 @@ class Canvas(app.Canvas):
         if self.limit is None:
             # default to 1000 is no limit is specified
             self.limit = 1000
+        if self.bgcolour is None:
+            self.bgcolour = (1,1,1,1)
+        if self.fgcolour is None:
+            self.fgcolour = (0,1,1,1)
         self.init_pos = int(numpy.ceil(self.limit ** 0.5))
-        self.grid = mg(self.limit, (1,1,1,1))
-        self.set_colour((0,1,1), self.grid, (5, 5))
+        self.grid = mg(self.limit, self.bgcolour)
         # gl/gloo buffers
         verts = gloo.VertexBuffer(self.grid['position'].copy())
         self.program['position'] = verts
@@ -99,10 +102,11 @@ class Canvas(app.Canvas):
         self.limit = lim
 
     def set_colour(self, colour, grid, coord):
-        index = self.limit - (self.init_pos + self.init_pos*coord[1]) + coord[0]
+        index = (self.init_pos**2) - (self.init_pos + self.init_pos*coord[1]) + coord[0]
         self.grid['colour'][index][0] = colour[0]
         self.grid['colour'][index][1] = colour[1]
         self.grid['colour'][index][2] = colour[2]
+        self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
 
     def on_draw(self, event):
         gloo.clear()
@@ -136,9 +140,3 @@ class Canvas(app.Canvas):
         self.zoom['gl_z'] += step
         self.program['size'] = self.zoom['size']
         self.update()
-
-
-if __name__ == '__main__':
-    c = Canvas(keys='interactive', size=(640.,480.), resizable=False, limit=100)
-    c.show()
-    app.run()
