@@ -1,8 +1,7 @@
 import sys
 import numpy
 from vispy import app, gloo
-from vispy.util.transforms import perspective, translate, rotate, frustum
-from OpenGL.GLU import gluUnProject, gluProject
+from vispy.util.transforms import perspective, translate
 
 
 VERTEX = """
