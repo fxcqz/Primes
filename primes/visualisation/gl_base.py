@@ -57,13 +57,16 @@ class Canvas(app.Canvas):
     def __init__(self, *args, **kwargs):
         # override canvas constructor to obtain a limit
         self.limit = kwargs.pop('limit', None)
+        self.bgcolour = kwargs.pop('bgcolour', None)
+        self.fgcolour = kwargs.pop('fgcolour', None)
         app.Canvas.__init__(self, *args, **kwargs)
         self.program = gloo.Program(VERTEX, FRAGMENT)
         if self.limit is None:
             # default to 1000 is no limit is specified
             self.limit = 1000
+        self.init_pos = int(numpy.ceil(self.limit ** 0.5))
         self.grid = mg(self.limit, (1,1,1,1))
-        self.grid['colour'][0][0] = 0
+        self.set_colour((0,1,1), self.grid, (5, 5))
         # gl/gloo buffers
         verts = gloo.VertexBuffer(self.grid['position'].copy())
         self.program['position'] = verts
@@ -76,7 +79,6 @@ class Canvas(app.Canvas):
         self.projection = perspective(135., self.size[0] /
                                       float(self.size[1]), 0.5, 100.)
         # initial camera position
-        self.init_pos = int(numpy.ceil(self.limit ** 0.5))
         self.pan = self.program['pan'] = [0., 0.]
         # zoom data
         #   size: sent to glsl to be gl_PointSize
@@ -95,6 +97,12 @@ class Canvas(app.Canvas):
 
     def set_limit(self, lim):
         self.limit = lim
+
+    def set_colour(self, colour, grid, coord):
+        index = self.limit - (self.init_pos + self.init_pos*coord[1]) + coord[0]
+        self.grid['colour'][index][0] = colour[0]
+        self.grid['colour'][index][1] = colour[1]
+        self.grid['colour'][index][2] = colour[2]
 
     def on_draw(self, event):
         gloo.clear()
