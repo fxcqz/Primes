@@ -60,6 +60,7 @@ class Canvas(app.Canvas):
         self.bgcolour = kwargs.pop('bgcolour', None)
         self.fgcolour = kwargs.pop('fgcolour', None)
         app.Canvas.__init__(self, *args, **kwargs)
+        app.use_app('PyQt4')
         self.program = gloo.Program(VERTEX, FRAGMENT)
         if self.limit is None:
             # default to 1000 is no limit is specified
@@ -103,9 +104,9 @@ class Canvas(app.Canvas):
 
     def set_colour(self, colour, grid, coord):
         index = (self.init_pos**2) - (self.init_pos + self.init_pos*coord[1]) + coord[0]
-        self.grid['colour'][index][0] = colour[0]
-        self.grid['colour'][index][1] = colour[1]
-        self.grid['colour'][index][2] = colour[2]
+        self.grid['colour'][index][0] = colour[0] / 255.
+        self.grid['colour'][index][1] = colour[1] / 255.
+        self.grid['colour'][index][2] = colour[2] / 255.
         self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
 
     def on_draw(self, event):

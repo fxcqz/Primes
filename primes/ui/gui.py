@@ -16,6 +16,7 @@ class StartGui(QtGui.QMainWindow):
         self.form_handler = FormHandler(self.ui.specific_settings)
         self.setup_connections()
         self.form_handler.setup_form("ulam")
+        self.gl_canvas = None
 
     def setup_connections(self):
         # layout form swapper
@@ -36,17 +37,26 @@ class StartGui(QtGui.QMainWindow):
         scn = QtGui.QGraphicsScene(self.ui.visualisation)
         self.ui.visualisation.setScene(scn)
         if vis != -1:
-            gen_t = Thread(target=vis.to_image, args=("primes/tmp/v.png",))
-            gen_t.start()
-            gen_t.join()
-            # maybe error check this filepath
-            display = QtGui.QPixmap("primes/tmp/v.png")
-            scn.addPixmap(display)
+            if str(self.ui.f_graphics.currentText()) == 'Image (png)':
+                if self.gl_canvas is not None:
+                    self.gl_canvas.native.setVisible(False)
+                    self.gl_canvas.parent = None
+                gen_t = Thread(target=vis.to_image, args=("primes/tmp/v.png",))
+                gen_t.start()
+                gen_t.join()
+                self.ui.main_tabs.setCurrentIndex(1)
+                #maybe error check this filepath
+                display = QtGui.QPixmap("primes/tmp/v.png")
+                scn.addPixmap(display)
+            elif str(self.ui.f_graphics.currentText()) == 'OpenGL':
+                # gl
+                self.ui.main_tabs.setCurrentIndex(1)
+                self.gl_canvas = vis.to_gl(self.ui.visualisation_tab)
+                self.gl_canvas.show()
         else:
             scn.addText("Invalid Visualisation").setDefaultTextColor(QtGui.QColor(255, 255, 255))
         self.ui.generate.setEnabled(True)
         self.ui.generate.setText("Generate")
-        self.ui.main_tabs.setCurrentIndex(1)
         self.ui.visualisation.show()
 
     def generate(self):

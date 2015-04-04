@@ -13,8 +13,8 @@ import time
 
 
 def main():
-    u = ulam.UlamSpiral(prime.Generator, {"min": 0, "max": 1000, "width": 250, "height": 250, "colour": (0, 255, 0, 255), "bgcolour": (0, 0, 0, 255)})
-    u.to_gl()
+    #u = ulam.UlamSpiral(prime.Generator, {"min": 0, "max": 10000, "width": 250, "height": 250, "colour": (0, 255, 0, 255), "bgcolour": (0, 0, 0, 255)})
+    #u.to_gl()
     #u.generator.set_gap(2)
     #s = sacks.SacksSpiral(prime.Generator, {"min": 0, "max": 20000, "width": 250, "height": 250, "colour": (0, 255, 0, 255), "bgcolour": (0, 0, 0, 255)})
     #c = cloud.PrimeCloud(prime.Generator, {"min": 0, "max": 200000, "width": 400, "height": 400, "colour": (0, 255, 0, 255), "bgcolour": (0, 0, 0, 255)})
@@ -25,7 +25,7 @@ def main():
     #c.to_image("test.png")
     #p.to_image("test.png")
     #print time.time() - start, "seconds"
-    #gui.run(sys.argv)
+    gui.run(sys.argv)
 
 
 if __name__ == '__main__':
