@@ -37,10 +37,12 @@ class StartGui(QtGui.QMainWindow):
         scn = QtGui.QGraphicsScene(self.ui.visualisation)
         self.ui.visualisation.setScene(scn)
         if vis != -1:
+            if self.gl_canvas is not None:
+                self.gl_canvas.native.setVisible(False)
+                self.gl_canvas.parent = None
+                del self.gl_canvas
+                self.gl_canvas = None
             if str(self.ui.f_graphics.currentText()) == 'Image (png)':
-                if self.gl_canvas is not None:
-                    self.gl_canvas.native.setVisible(False)
-                    self.gl_canvas.parent = None
                 gen_t = Thread(target=vis.to_image, args=("primes/tmp/v.png",))
                 gen_t.start()
                 gen_t.join()
