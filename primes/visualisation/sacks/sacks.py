@@ -4,6 +4,7 @@ import numpy as np
 import logging
 import primes.utils.coordinates as coordinates
 import primes.visualisation.generic as generic
+from primes.visualisation.gl_base import Canvas
 
 
 logger = logging.getLogger(__name__)
@@ -24,3 +25,17 @@ class SacksSpiral(generic.Generic):
             if 0 <= x < self.width and 0 <= y < self.height:
                 pix[x, y] = self.settings["colour"]
         img.save(imagename)
+
+    def to_gl(self, parent_):
+        self.generator.generate()
+        new_lim = int(np.ceil(self.limit ** 0.5))
+        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, \
+            limit=self.limit*4, bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], \
+            parent=parent_)
+        for point in self.generator.data:
+            coords = coordinates.pol_to_cart(np.sqrt(point), np.sqrt(point) * 2 * np.pi)
+            x = new_lim + int(coords[0])
+            y = new_lim + int(coords[1])
+            if 0 <= x < new_lim*2 and 0 <= y < new_lim*2:
+                canv.set_colour(self.settings['colour'], canv.grid, (x, y))
+        return canv

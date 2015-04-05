@@ -81,7 +81,7 @@ class Canvas(app.Canvas):
         # the purpose of setting the near limit to 0.5 is that at any distance
         # nearer the points, the zooming stops working
         self.projection = perspective(135., self.size[0] /
-                                      float(self.size[1]), 0.5, 100.)
+                                      float(self.size[1]), 0.5, 500.)
         # initial camera position
         self.pan = self.program['pan'] = [0., 0.]
         # zoom data
@@ -92,6 +92,9 @@ class Canvas(app.Canvas):
                      "resolution": self.size[1],
                      "gl_z": -(numpy.sqrt(self.limit) / 4.)}
         # initial camera displacement (centres grid in viewport)
+        init_z = -(numpy.sqrt(self.limit) / 4.)
+        if init_z < -500:
+            init_z = -500
         translate(self.view, -(self.init_pos / 2.)+.5,
             -(self.init_pos / 2.)+.5, -(numpy.sqrt(self.limit) / 4.))
         self.program['size'] = self.zoom['size']
