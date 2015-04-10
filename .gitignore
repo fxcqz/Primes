@@ -1,5 +1,4 @@
 *.pyc
 *.dat
 notes
-ui_mockups/
-primes/tmp/
+primes/tmp/v.png
