@@ -4,11 +4,13 @@ from forms.ulam.form import Ui_FormUlam
 from forms.sacks.form import Ui_FormSacks
 from forms.cloud.form import Ui_FormCloud
 from forms.pcomplex.form import Ui_FormComplex
+from forms.simple_grid.form import Ui_FormSimpleGrid
 
 import forms.ulam.handler as ulam_handler
 import forms.sacks.handler as sacks_handler
 import forms.cloud.handler as cloud_handler
 import forms.pcomplex.handler as complex_handler
+import forms.simple_grid.handler as sg_handler
 
 
 class FormWrapper(QtGui.QWidget):
@@ -29,7 +31,8 @@ class FormHandler():
         self.form_handles = {"ulam": Ui_FormUlam(),
                              "sacks": Ui_FormSacks(),
                              "cloud": Ui_FormCloud(),
-                             "complex": Ui_FormComplex()}
+                             "complex": Ui_FormComplex(),
+                             "simplegrid": Ui_FormSimpleGrid()}
         self.form_wrapper = None
 
     def setup_form(self, name):
@@ -48,6 +51,8 @@ class FormHandler():
             cloud_handler.conn(self.form_wrapper.form)
         elif name == "complex":
             complex_handler.conn(self.form_wrapper.form)
+        elif name == "simplegrid":
+            sg_handler.conn(self.form_wrapper.form)
 
     def retrieve_data(self):
         ret = None
@@ -61,6 +66,8 @@ class FormHandler():
                 ret = cloud_handler.retrieve(form)
             elif self.form_wrapper.name == "complex":
                 ret = complex_handler.retrieve(form)
+            elif self.form_wrapper.name == "simplegrid":
+                ret = sg_handler.retrieve(form)
         return ret
 
     def remove_form(self):

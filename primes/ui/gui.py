@@ -137,6 +137,8 @@ class StartGui(QtGui.QMainWindow):
             self.form_handler.setup_form("cloud")
         elif name == "Complex Plane":
             self.form_handler.setup_form("complex")
+        elif name == "Simple Grid":
+            self.form_handler.setup_form("simplegrid")
 
 
 def run(argv):
