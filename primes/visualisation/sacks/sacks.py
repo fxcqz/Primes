@@ -29,7 +29,7 @@ class SacksSpiral(generic.Generic):
     def to_gl(self, parent_):
         self.generator.generate()
         new_lim = int(np.ceil(self.limit ** 0.5))
-        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, \
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, \
             limit=self.limit*4, bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], \
             parent=parent_)
         for point in self.generator.data:

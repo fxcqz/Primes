@@ -21,7 +21,7 @@ class SimpleGrid(generic.Generic):
 
     def to_gl(self, parent_):
         self.generate()
-        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, limit=self.limit, \
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, limit=self.limit, \
             bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], parent=parent_)
         for p in self.output:
             canv.set_colour(self.settings['colour'], canv.grid, p)

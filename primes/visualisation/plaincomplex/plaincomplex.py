@@ -26,7 +26,7 @@ class PlainComplex(generic.Generic):
         max_ = self.settings['max']
         new_lim = int(max([abs(np.real(min_)) + abs(np.real(max_)),
                        abs(np.imag(min_)) + abs(np.imag(max_))]))
-        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, \
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, \
             limit=new_lim**2, bgcolour=self.settings['bgcolour'], \
             fgcolour=self.settings['colour'], parent=parent_)
         try:
@@ -35,5 +35,5 @@ class PlainComplex(generic.Generic):
                     if complex(x, y) in self.generator.data:
                         canv.set_colour(self.settings['colour'], canv.grid, (((new_lim/2)+x), ((new_lim/2)+y)))
         except IndexError:
-            pass`
+            pass
         return canv
