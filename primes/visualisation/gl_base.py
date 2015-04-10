@@ -107,9 +107,9 @@ class Canvas(app.Canvas):
 
     def set_colour(self, colour, grid, coord):
         index = (self.init_pos**2) - (self.init_pos + self.init_pos*coord[1]) + coord[0]
-        self.grid['colour'][index][0] = colour[0] / 255.
-        self.grid['colour'][index][1] = colour[1] / 255.
-        self.grid['colour'][index][2] = colour[2] / 255.
+        self.grid['colour'][index][0] = colour[0] / float(255)
+        self.grid['colour'][index][1] = colour[1] / float(255)
+        self.grid['colour'][index][2] = colour[2] / float(255)
         self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
 
     def on_draw(self, event):

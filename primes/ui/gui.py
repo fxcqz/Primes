@@ -36,6 +36,8 @@ class StartGui(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), \
             self.generate)
         # menu items
+        # new
+        self.ui.actionNew.triggered.connect(self.new_visualisation)
         # exit
         self.ui.actionExit.triggered.connect(lambda: sys.exit())
         # about
@@ -93,7 +95,8 @@ class StartGui(QtGui.QMainWindow):
                  "bgcolour": bg_colour.getRgb()})
             visualisation.generator.set_specifics(form_data)
             visualisation.set_specifics(form_data)
-            if not visualisation.generator.runnable:
+            if not visualisation.generator.runnable or not bg_colour.isValid() \
+                    or not fg_colour.isValid():
                 visualisation = -1
         else:
             visualisation = -1
@@ -144,6 +147,17 @@ class StartGui(QtGui.QMainWindow):
             self.form_handler.setup_form("complex")
         elif name == "Simple Grid":
             self.form_handler.setup_form("simplegrid")
+
+    def new_visualisation(self):
+        self.ui.main_tabs.setCurrentIndex(0)
+        self.ui.f_graphics.setCurrentIndex(0)
+        self.ui.f_layout.setCurrentIndex(0)
+        self.ui.f_width.setValue(250)
+        self.ui.f_height.setValue(250)
+        self.ui.f_fg_text.setText("#000000")
+        self.ui.f_bg_text.setText("#FFFFFF")
+        self.form_handler.remove_form()
+        self.form_swapper(str(self.ui.f_layout.currentText()))
 
     def show_about(self):
         QtGui.QMessageBox.about(self, "About Prime Visualisation", \
