@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'tabbed.ui'
 #
-# Created: Fri Apr 10 19:21:02 2015
+# Created: Fri Apr 10 21:37:27 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,9 +44,11 @@ class Ui_MainWindow(object):
         self.groupBox_3.setObjectName(_fromUtf8("groupBox_3"))
         self.f_bg_button = QtGui.QToolButton(self.groupBox_3)
         self.f_bg_button.setGeometry(QtCore.QRect(165, 50, 27, 20))
+        self.f_bg_button.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.f_bg_button.setObjectName(_fromUtf8("f_bg_button"))
         self.f_fg_text = QtGui.QLineEdit(self.groupBox_3)
         self.f_fg_text.setGeometry(QtCore.QRect(90, 17, 70, 20))
+        self.f_fg_text.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_fg_text.setObjectName(_fromUtf8("f_fg_text"))
         self.label_5 = QtGui.QLabel(self.groupBox_3)
         self.label_5.setGeometry(QtCore.QRect(10, 17, 73, 16))
@@ -56,15 +58,18 @@ class Ui_MainWindow(object):
         self.label_9.setObjectName(_fromUtf8("label_9"))
         self.f_bg_text = QtGui.QLineEdit(self.groupBox_3)
         self.f_bg_text.setGeometry(QtCore.QRect(90, 50, 70, 20))
+        self.f_bg_text.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_bg_text.setObjectName(_fromUtf8("f_bg_text"))
         self.f_fg_button = QtGui.QToolButton(self.groupBox_3)
         self.f_fg_button.setGeometry(QtCore.QRect(165, 17, 27, 20))
+        self.f_fg_button.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.f_fg_button.setObjectName(_fromUtf8("f_fg_button"))
         self.groupBox_4 = QtGui.QGroupBox(self.general_settings)
         self.groupBox_4.setGeometry(QtCore.QRect(10, 140, 201, 81))
         self.groupBox_4.setObjectName(_fromUtf8("groupBox_4"))
         self.f_height = QtGui.QSpinBox(self.groupBox_4)
         self.f_height.setGeometry(QtCore.QRect(80, 46, 111, 20))
+        self.f_height.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_height.setMinimum(1)
         self.f_height.setMaximum(1080)
         self.f_height.setProperty("value", 250)
@@ -77,6 +82,7 @@ class Ui_MainWindow(object):
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.f_width = QtGui.QSpinBox(self.groupBox_4)
         self.f_width.setGeometry(QtCore.QRect(80, 20, 111, 20))
+        self.f_width.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_width.setMinimum(1)
         self.f_width.setMaximum(1920)
         self.f_width.setProperty("value", 250)
@@ -86,6 +92,7 @@ class Ui_MainWindow(object):
         self.groupBox_5.setObjectName(_fromUtf8("groupBox_5"))
         self.f_layout = QtGui.QComboBox(self.groupBox_5)
         self.f_layout.setGeometry(QtCore.QRect(80, 46, 111, 20))
+        self.f_layout.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_layout.setObjectName(_fromUtf8("f_layout"))
         self.f_layout.addItem(_fromUtf8(""))
         self.f_layout.addItem(_fromUtf8(""))
@@ -97,6 +104,7 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.f_graphics = QtGui.QComboBox(self.groupBox_5)
         self.f_graphics.setGeometry(QtCore.QRect(80, 20, 111, 20))
+        self.f_graphics.setFocusPolicy(QtCore.Qt.TabFocus)
         self.f_graphics.setObjectName(_fromUtf8("f_graphics"))
         self.f_graphics.addItem(_fromUtf8(""))
         self.f_graphics.addItem(_fromUtf8(""))
@@ -146,8 +154,6 @@ class Ui_MainWindow(object):
         self.actionAbout = QtGui.QAction(MainWindow)
         self.actionAbout.setObjectName(_fromUtf8("actionAbout"))
         self.menuFile.addAction(self.actionNew)
-        self.menuFile.addAction(self.actionOpen)
-        self.menuFile.addAction(self.actionSave)
         self.menuFile.addAction(self.actionSave_As)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionExit)

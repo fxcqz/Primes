@@ -75,6 +75,9 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
         <property name="text">
          <string>...</string>
         </property>
@@ -87,6 +90,9 @@
           <width>70</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
         </property>
         <property name="text">
          <string>#000000</string>
@@ -127,6 +133,9 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
         <property name="text">
          <string>#FFFFFF</string>
         </property>
@@ -139,6 +148,9 @@
           <width>27</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
         </property>
         <property name="text">
          <string>...</string>
@@ -165,6 +177,9 @@
           <width>111</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
         </property>
         <property name="minimum">
          <number>1</number>
@@ -211,6 +226,9 @@
           <height>20</height>
          </rect>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
         <property name="minimum">
          <number>1</number>
         </property>
@@ -242,6 +260,9 @@
           <width>111</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
         </property>
         <item>
          <property name="text">
@@ -290,6 +311,9 @@
           <width>111</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
         </property>
         <item>
          <property name="text">
@@ -401,8 +425,6 @@
      <string>File</string>
     </property>
     <addaction name="actionNew"/>
-    <addaction name="actionOpen"/>
-    <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
