@@ -38,6 +38,8 @@ class StartGui(QtGui.QMainWindow):
         # menu items
         # new
         self.ui.actionNew.triggered.connect(self.new_visualisation)
+        # save 
+        self.ui.actionSave_As.triggered.connect(self.save)
         # exit
         self.ui.actionExit.triggered.connect(lambda: sys.exit())
         # about
@@ -158,6 +160,9 @@ class StartGui(QtGui.QMainWindow):
         self.ui.f_bg_text.setText("#FFFFFF")
         self.form_handler.remove_form()
         self.form_swapper(str(self.ui.f_layout.currentText()))
+
+    def save(self):
+        pass
 
     def show_about(self):
         QtGui.QMessageBox.about(self, "About Prime Visualisation", \

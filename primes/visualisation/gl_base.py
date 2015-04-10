@@ -105,6 +105,9 @@ class Canvas(app.Canvas):
         self.program['model'] = self.model
         self.program['projection'] = self.projection
 
+    def on_initialize(self, event):
+        gloo.set_state(clear_color=self.bgcolour)
+
     def set_limit(self, lim):
         self.limit = lim
 
