@@ -7,4 +7,3 @@ dependencies:
 * PyQt 4
 * nosetests
 * vispy
-* pyopengl
