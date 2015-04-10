@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'tabbed.ui'
 #
-# Created: Sat Mar 28 00:38:09 2015
+# Created: Fri Apr 10 19:21:02 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -91,13 +91,13 @@ class Ui_MainWindow(object):
         self.f_layout.addItem(_fromUtf8(""))
         self.f_layout.addItem(_fromUtf8(""))
         self.f_layout.addItem(_fromUtf8(""))
+        self.f_layout.addItem(_fromUtf8(""))
         self.label_2 = QtGui.QLabel(self.groupBox_5)
         self.label_2.setGeometry(QtCore.QRect(33, 46, 41, 16))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.f_graphics = QtGui.QComboBox(self.groupBox_5)
         self.f_graphics.setGeometry(QtCore.QRect(80, 20, 111, 20))
         self.f_graphics.setObjectName(_fromUtf8("f_graphics"))
-        self.f_graphics.addItem(_fromUtf8(""))
         self.f_graphics.addItem(_fromUtf8(""))
         self.f_graphics.addItem(_fromUtf8(""))
         self.label = QtGui.QLabel(self.groupBox_5)
@@ -177,10 +177,10 @@ class Ui_MainWindow(object):
         self.f_layout.setItemText(1, _translate("MainWindow", "Sacks Spiral", None))
         self.f_layout.setItemText(2, _translate("MainWindow", "Data Cloud", None))
         self.f_layout.setItemText(3, _translate("MainWindow", "Complex Plane", None))
+        self.f_layout.setItemText(4, _translate("MainWindow", "Simple Grid", None))
         self.label_2.setText(_translate("MainWindow", "Layout", None))
         self.f_graphics.setItemText(0, _translate("MainWindow", "Image (png)", None))
         self.f_graphics.setItemText(1, _translate("MainWindow", "OpenGL", None))
-        self.f_graphics.setItemText(2, _translate("MainWindow", "Graphing", None))
         self.label.setText(_translate("MainWindow", "Graphics", None))
         self.generate.setText(_translate("MainWindow", "Generate", None))
         self.specific_settings.setTitle(_translate("MainWindow", "Specific", None))

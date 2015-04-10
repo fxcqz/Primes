@@ -23,6 +23,10 @@ class StartGui(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.f_layout, \
             QtCore.SIGNAL("currentIndexChanged(QString)"), \
             lambda: self.form_swapper(self.ui.f_layout.currentText()))
+        # graphics 
+        QtCore.QObject.connect(self.ui.f_graphics, \
+            QtCore.SIGNAL("currentIndexChanged(QString)"), \
+            lambda: self.graphics_settings(self.ui.f_graphics.currentText()))
         # colour pickers
         QtCore.QObject.connect(self.ui.f_fg_button, \
             QtCore.SIGNAL("clicked()"), lambda: self.colour_picker("fg"))
@@ -62,8 +66,8 @@ class StartGui(QtGui.QMainWindow):
         self.ui.visualisation.show()
 
     def generate(self):
-        self.ui.generate.setEnabled(False)
         self.ui.generate.setText("Generating...")
+        self.ui.generate.setEnabled(False)
         # core settings
         form_data = self.form_handler.retrieve_data()
         layout = handles.visualisations[str(self.ui.f_layout.currentText())]
@@ -99,7 +103,31 @@ class StartGui(QtGui.QMainWindow):
             elif src == "bg":
                 self.ui.f_bg_text.setText(str(colour.name()))
 
+    def form_combinator(self):
+        graphics = str(self.ui.f_graphics.currentText())
+        layout = str(self.ui.f_layout.currentText())
+        if graphics == "Image (png)":
+            if layout == "Simple Grid":
+                self.ui.generate.setEnabled(False)
+            else:
+                self.ui.generate.setEnabled(True)
+        elif graphics == "OpenGL":
+            if layout == "Data Cloud":
+                self.ui.generate.setEnabled(False)
+            else:
+                self.ui.generate.setEnabled(True)
+
+    def graphics_settings(self, name):
+        self.form_combinator()
+        if name == "OpenGL":
+            self.ui.f_width.setEnabled(False)
+            self.ui.f_height.setEnabled(False)
+        elif name == "Image (png)":
+            self.ui.f_width.setEnabled(True)
+            self.ui.f_height.setEnabled(True)
+
     def form_swapper(self, name):
+        self.form_combinator()
         self.form_handler.remove_form()
         if name == "Ulam Spiral":
             self.form_handler.setup_form("ulam")
