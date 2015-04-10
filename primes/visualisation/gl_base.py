@@ -53,12 +53,15 @@ def zoom(size, resolution, gl_z, step):
     ratio = pix_z / new_z
     return size * ratio
 
+def norm_colour(colour):
+    return (colour[0]/255., colour[1]/255., colour[2]/255., colour[3]/255.)
+
 class Canvas(app.Canvas):
     def __init__(self, *args, **kwargs):
         # override canvas constructor to obtain a limit
         self.limit = kwargs.pop('limit', None)
-        self.bgcolour = kwargs.pop('bgcolour', None)
-        self.fgcolour = kwargs.pop('fgcolour', None)
+        self.bgcolour = norm_colour(kwargs.pop('bgcolour', None))
+        self.fgcolour = norm_colour(kwargs.pop('fgcolour', None))
         app.Canvas.__init__(self, *args, **kwargs)
         app.use_app('PyQt4')
         self.program = gloo.Program(VERTEX, FRAGMENT)
@@ -68,7 +71,7 @@ class Canvas(app.Canvas):
         if self.bgcolour is None:
             self.bgcolour = (1,1,1,1)
         if self.fgcolour is None:
-            self.fgcolour = (0,1,1,1)
+            self.fgcolour = (0,0,0,1)
         self.init_pos = int(numpy.ceil(self.limit ** 0.5))
         self.grid = mg(self.limit, self.bgcolour)
         # gl/gloo buffers
