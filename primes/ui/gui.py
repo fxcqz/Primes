@@ -35,6 +35,11 @@ class StartGui(QtGui.QMainWindow):
         # generate
         QtCore.QObject.connect(self.ui.generate, QtCore.SIGNAL("clicked()"), \
             self.generate)
+        # menu items
+        # exit
+        self.ui.actionExit.triggered.connect(lambda: sys.exit())
+        # about
+        self.ui.actionAbout.triggered.connect(self.show_about)
 
     def visualise(self, vis):
         QtGui.QApplication.processEvents()
@@ -139,6 +144,13 @@ class StartGui(QtGui.QMainWindow):
             self.form_handler.setup_form("complex")
         elif name == "Simple Grid":
             self.form_handler.setup_form("simplegrid")
+
+    def show_about(self):
+        QtGui.QMessageBox.about(self, "About Prime Visualisation", \
+            """Author:\tMatthew Rawcliffe\n"""
+            """Year:\t2015\n"""
+            """Info:\tMethods for visualising prime numbers\n"""
+            """\tin 2 and 3 dimensional space.\n""")
 
 
 def run(argv):
