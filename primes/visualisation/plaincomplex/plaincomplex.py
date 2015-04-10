@@ -1,6 +1,8 @@
 from PIL import Image
+import numpy as np
 import logging
 import primes.visualisation.generic as generic
+from primes.visualisation.gl_base import Canvas
 
 
 logger = logging.getLogger(__name__)
@@ -17,3 +19,21 @@ class PlainComplex(generic.Generic):
                 if complex(x, y) in self.generator.data:
                     pix[x+int(self.width/2), y+int(self.height/2)] = self.settings["colour"]
         img.save(imagename)
+
+    def to_gl(self, parent_):
+        self.generator.generate()
+        min_ = self.settings['min']
+        max_ = self.settings['max']
+        new_lim = int(max([abs(np.real(min_)) + abs(np.real(max_)),
+                       abs(np.imag(min_)) + abs(np.imag(max_))]))
+        canv = Canvas(keys='interactive', size=(640., 480.), resizable=False, \
+            limit=new_lim**2, bgcolour=self.settings['bgcolour'], \
+            fgcolour=self.settings['colour'], parent=parent_)
+        try:
+            for y in range(int(np.imag(min_)), int(np.imag(max_))):
+                for x in range(int(np.real(min_)), int(np.real(max_))):
+                    if complex(x, y) in self.generator.data:
+                        canv.set_colour(self.settings['colour'], canv.grid, (((new_lim/2)+x), ((new_lim/2)+y)))
+        except IndexError:
+            pass`
+        return canv
