@@ -173,11 +173,13 @@ class StartGui(QtGui.QMainWindow):
             filename = str(filed.getSaveFileName(self, \
                 "Save the Visualisation as an Image...", QtCore.QDir.homePath(), \
                 ("Images (*.png)")))
-            if not filename.find(".png"):
+            if filename.find(".png") == -1:
                 filename += ".png"
             if self.gl_canvas:
                 # save gl as img
                 pixels_to_image(self.gl_canvas.get_data(), (637, 437), "primes/tmp/v.png")
+            if not os.path.exists(os.path.dirname(filename)):
+                os.makedirs(os.path.dirname(filename))
             if os.path.exists("primes/tmp/v.png"):
                 shutil.copy2("primes/tmp/v.png", filename)
             else:
