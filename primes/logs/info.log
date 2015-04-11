@@ -1914,3 +1914,198 @@
 2015-04-04 17:07:43,242 - vispy - WARNING - QGraphicsProxyWidget::setWidget: cannot embed widget 0x1306590 which is not a toplevel widget, and is not a child of an embedded widget
 2015-04-04 17:15:31,399 - vispy - WARNING - QCoreApplication::exec: The event loop is already running
 2015-04-04 17:58:19,914 - vispy - WARNING - QLayout: Attempting to add QLayout "" to StartGui "MainWindow", which already has a layout
+2015-04-11 00:31:01,480 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 6 (Unknown request)
+  Resource id:  0x1a00045
+2015-04-11 00:31:01,481 - vispy - WARNING - X Error: BadValue (integer parameter out of range for operation) 2
+  Extension:    155 (Uknown extension)
+  Minor opcode: 3 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:31:01,504 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00045
+2015-04-11 00:31:01,504 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:31:01,505 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:31:01,506 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00045
+2015-04-11 00:31:01,506 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:31:01,506 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:31:01,512 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00045
+2015-04-11 00:31:01,514 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:31:01,515 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:31:01,532 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 4 (Unknown request)
+  Resource id:  0x1a00045
+2015-04-11 00:32:16,625 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 6 (Unknown request)
+  Resource id:  0x1a00039
+2015-04-11 00:32:16,626 - vispy - WARNING - X Error: BadValue (integer parameter out of range for operation) 2
+  Extension:    155 (Uknown extension)
+  Minor opcode: 3 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:32:16,627 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00039
+2015-04-11 00:32:16,628 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:32:16,628 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:32:16,629 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00039
+2015-04-11 00:32:16,629 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:32:16,630 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:32:16,631 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00039
+2015-04-11 00:32:16,631 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:32:16,635 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:32:16,655 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 4 (Unknown request)
+  Resource id:  0x1a00039
+2015-04-11 00:36:41,608 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 6 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:36:41,609 - vispy - WARNING - X Error: BadValue (integer parameter out of range for operation) 2
+  Extension:    155 (Uknown extension)
+  Minor opcode: 3 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:36:41,610 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:36:41,611 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:36:41,611 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:36:41,611 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:36:41,612 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:36:41,612 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:36:41,613 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:36:41,613 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:36:41,616 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:36:41,637 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 4 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:47:32,626 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 6 (Unknown request)
+  Resource id:  0x1a00030
+2015-04-11 00:47:32,627 - vispy - WARNING - X Error: BadValue (integer parameter out of range for operation) 2
+  Extension:    155 (Uknown extension)
+  Minor opcode: 3 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:47:32,628 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00030
+2015-04-11 00:47:32,629 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:47:32,629 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:47:32,630 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00030
+2015-04-11 00:47:32,630 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:47:32,631 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:47:32,632 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00030
+2015-04-11 00:47:32,632 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:47:32,632 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:47:32,646 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 4 (Unknown request)
+  Resource id:  0x1a00030
+2015-04-11 00:55:37,912 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 6 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:55:37,913 - vispy - WARNING - X Error: BadValue (integer parameter out of range for operation) 2
+  Extension:    155 (Uknown extension)
+  Minor opcode: 3 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:55:37,914 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:55:37,915 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:55:37,915 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:55:37,922 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:55:37,922 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:55:37,923 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:55:37,927 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 5 (Unknown request)
+  Resource id:  0x1a00036
+2015-04-11 00:55:37,927 - vispy - WARNING - X Error: 0 0
+  Extension:    155 (Uknown extension)
+  Minor opcode: 26 (Unknown request)
+  Resource id:  0x0
+2015-04-11 00:55:37,928 - vispy - WARNING - QGLContext::makeCurrent(): Failed.
+2015-04-11 00:55:37,943 - vispy - WARNING - X Error: GLXBadContext 172
+  Extension:    155 (Uknown extension)
+  Minor opcode: 4 (Unknown request)
+  Resource id:  0x1a00036

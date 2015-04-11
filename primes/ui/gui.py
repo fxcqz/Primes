@@ -1,10 +1,12 @@
 import sys
 import os
+import shutil
 from PyQt4 import QtGui, QtCore
 from threading import Thread
 from tabbed_window import Ui_MainWindow
 
 import primes.utils.handles as handles
+from primes.utils.gl_pixdata import pixels_to_image
 from form_handler import FormHandler
 
 
@@ -17,6 +19,7 @@ class StartGui(QtGui.QMainWindow):
         self.setup_connections()
         self.form_handler.setup_form("ulam")
         self.gl_canvas = None
+        self.im_canvas = False
 
     def setup_connections(self):
         # layout form swapper
@@ -63,6 +66,7 @@ class StartGui(QtGui.QMainWindow):
                 #maybe error check this filepath
                 display = QtGui.QPixmap("primes/tmp/v.png")
                 scn.addPixmap(display)
+                self.im_canvas = True
             elif str(self.ui.f_graphics.currentText()) == 'OpenGL':
                 # gl
                 self.ui.main_tabs.setCurrentIndex(1)
@@ -77,6 +81,7 @@ class StartGui(QtGui.QMainWindow):
     def generate(self):
         self.ui.generate.setText("Generating...")
         self.ui.generate.setEnabled(False)
+        self.im_canvas = False
         # core settings
         form_data = self.form_handler.retrieve_data()
         layout = handles.visualisations[str(self.ui.f_layout.currentText())]
@@ -162,7 +167,22 @@ class StartGui(QtGui.QMainWindow):
         self.form_swapper(str(self.ui.f_layout.currentText()))
 
     def save(self):
-        pass
+        QtGui.QApplication.processEvents()
+        if self.gl_canvas or self.im_canvas:
+            filed = QtGui.QFileDialog(self)
+            filename = str(filed.getSaveFileName(self, \
+                "Save the Visualisation as an Image...", QtCore.QDir.homePath(), \
+                ("Images (*.png)")))
+            if not filename.find(".png"):
+                filename += ".png"
+            if self.gl_canvas:
+                # save gl as img
+                pixels_to_image(self.gl_canvas.get_data(), (637, 437), "primes/tmp/v.png")
+            if os.path.exists("primes/tmp/v.png"):
+                shutil.copy2("primes/tmp/v.png", filename)
+            else:
+                err = QtGui.QMessageBox.warning(self, "An error occurred.", \
+                    "No image data could be found, so your file was not saved.")
 
     def show_about(self):
         QtGui.QMessageBox.about(self, "About Prime Visualisation", \

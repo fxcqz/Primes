@@ -150,3 +150,6 @@ class Canvas(app.Canvas):
         self.zoom['gl_z'] += step
         self.program['size'] = self.zoom['size']
         self.update()
+
+    def get_data(self):
+        return gloo.wrappers.read_pixels()
