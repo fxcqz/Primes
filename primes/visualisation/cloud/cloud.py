@@ -60,5 +60,6 @@ class PrimeCloud(generic.Generic):
         pix = img.load()
         for i, y in enumerate(self.output):
             for j, x in enumerate(y):
-                pix[i, j] = ((x >> 16) & 255, (x >> 8) & 255, x & 255, 255)
+                if i < self.settings['width'] and j < self.settings['height']:
+                    pix[i, j] = ((x >> 16) & 255, (x >> 8) & 255, x & 255, 255) 
         img.save(imagename)
