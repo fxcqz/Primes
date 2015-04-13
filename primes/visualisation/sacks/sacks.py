@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 class SacksSpiral(generic.Generic):
     def __init__(self, generator, settings):
         super(self.__class__, self).__init__(generator, settings)
-        # TODO: maybe use pol to cart to determine width/height/limit
 
     def to_image(self, imagename):
         self.generator.generate()
@@ -19,9 +18,8 @@ class SacksSpiral(generic.Generic):
         pix = img.load()
         for point in self.generator.data:
             coords = coordinates.pol_to_cart(np.sqrt(point), np.sqrt(point) * 2 * np.pi)
-            # TODO: use circles instead of pixels
             x = int(coords[0]) + self.width / 2
-            y = int(coords[1]) + self.height / 2
+            y = (self.height / 2) - int(coords[1])
             if 0 <= x < self.width and 0 <= y < self.height:
                 pix[x, y] = self.settings["colour"]
         img.save(imagename)
@@ -35,7 +33,7 @@ class SacksSpiral(generic.Generic):
         for point in self.generator.data:
             coords = coordinates.pol_to_cart(np.sqrt(point), np.sqrt(point) * 2 * np.pi)
             x = new_lim + int(coords[0])
-            y = new_lim + int(coords[1])
+            y = new_lim - int(coords[1])
             if 0 <= x < new_lim*2 and 0 <= y < new_lim*2:
                 canv.set_colour(self.settings['colour'], canv.grid, (x, y))
         return canv
