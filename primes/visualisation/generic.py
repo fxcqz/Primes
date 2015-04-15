@@ -33,3 +33,17 @@ class Generic(object):
                     visualisation basis.
         """
         pass
+
+    def generate(self):
+        """(Stub) Formats the data taken from the generator in a unique way to
+        be displayed as a visualisation.
+        """
+        pass
+
+    def to_image(self, imagename):
+        """(Stub) Saves the visualisation as an image."""
+        pass
+
+    def to_gl(self, parent_):
+        """(Stub) Outputs the visualisation data on an OpenGL Canvas."""
+        pass

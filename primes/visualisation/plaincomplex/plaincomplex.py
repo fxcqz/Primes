@@ -7,10 +7,19 @@ from primes.visualisation.gl_base import Canvas
 
 logger = logging.getLogger(__name__)
 class PlainComplex(generic.Generic):
+    """For simply displaying complex numbers on complex coordinates.
+    
+    Note:
+        This visualisation is made unique by the dataset it uses rather than the
+        visualisation itself.
+
+    See primes.visualisation.generic for more information.
+    """
     def __init__(self, generator, settings):
         super(self.__class__, self).__init__(generator, settings)
 
     def to_image(self, imagename):
+        """See primes.visualisation.generic for more information."""
         self.generator.generate()
         img = Image.new("RGBA", (self.width, self.height), self.settings["bgcolour"])
         pix = img.load()
@@ -21,6 +30,7 @@ class PlainComplex(generic.Generic):
         img.save(imagename)
 
     def to_gl(self, parent_):
+        """See primes.visualisation.generic for more information."""
         self.generator.generate()
         min_ = self.settings['min']
         max_ = self.settings['max']
