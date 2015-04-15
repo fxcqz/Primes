@@ -14,6 +14,10 @@ import forms.simple_grid.handler as sg_handler
 
 
 class FormWrapper(QtGui.QWidget):
+    """Wrapper class for setting up a form as a Qt widget and tying it to a name.
+    
+    Extends QWidget.
+    """
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.name = None
@@ -26,6 +30,22 @@ class FormWrapper(QtGui.QWidget):
 
 
 class FormHandler():
+    """Handles the forms for all of the different visualisations.
+    
+    The reasoning  was that since each  visualisation has differing settings, it
+    seemed pertinent to dynamically load individual forms for each one.
+    This class can set up forms, call a connection function from individual form
+    handlers which sets up Slots/Signals for the form itself, retrieve data from
+    these forms and remove the forms from the parent ui element.
+
+    Arguments:
+        parent -- A Qt widget in which to place the form
+
+    Attributes:
+        form_handles -- A dictionary of handles to the form widgets themselves.
+        form_wrapper -- The wrapper around whatever the  current form happens to
+                        to be.
+    """
     def __init__(self, parent):
         self.parent = parent
         self.form_handles = {"ulam": Ui_FormUlam(),
@@ -36,6 +56,13 @@ class FormHandler():
         self.form_wrapper = None
 
     def setup_form(self, name):
+        """Sets up a form to be displayed in the main ui and then shows it.
+        
+        Arguments:
+            name -- the name of the  form to be  displayed (this  corresponds to
+                    whatever name  is  used  for  the  form  in the form_handles
+                    instance variable.
+        """
         self.form_wrapper = FormWrapper()
         self.form_wrapper.set_form(name, self.form_handles[name])
         self.form_wrapper.setParent(self.parent)
@@ -43,6 +70,15 @@ class FormHandler():
         self.form_wrapper.show()
 
     def setup_connections(self, name):
+        """Sets up Qt slogs/signals for a given form.
+
+        This is useful for  enabling/disabling elements within  the form itself,
+        and bears some correspondance  to the `set_specifics' function  found in
+        some (or all) Generators.
+
+        Arguments:
+            name -- the name of the form to set up connections for.
+        """
         if name == "ulam":
             ulam_handler.conn(self.form_wrapper.form)
         elif name == "sacks":
@@ -55,6 +91,14 @@ class FormHandler():
             sg_handler.conn(self.form_wrapper.form)
 
     def retrieve_data(self):
+        """Retrieves data from the currently loaded form.
+
+        This is done by calling the retrieve function found in the respective
+        form handle module.
+
+        Returns:
+            All the data held in the current form.
+        """
         ret = None
         if self.form_wrapper:
             form = self.form_wrapper.form
@@ -71,6 +115,7 @@ class FormHandler():
         return ret
 
     def remove_form(self):
+        """Removes the current form from the ui."""
         if self.form_wrapper:
             self.form_wrapper.setParent(None)
             del self.form_wrapper
