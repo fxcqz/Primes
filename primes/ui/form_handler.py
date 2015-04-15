@@ -37,6 +37,11 @@ class FormHandler():
     This class can set up forms, call a connection function from individual form
     handlers which sets up Slots/Signals for the form itself, retrieve data from
     these forms and remove the forms from the parent ui element.
+    Each form itself has a corresponding module with a form.py file, which holds
+    the boilerplate for the widget itself, and a handler.py which each contain a
+    connection and retrieve function. These two functions  are both very similar
+    throughout  all  different forms, and therefore the   functionality of these
+    modules is implicit based on documentation in this class.
 
     Arguments:
         parent -- A Qt widget in which to place the form
