@@ -11,6 +11,12 @@ import primes.visualisation.plaincomplex.plaincomplex
 import primes.visualisation.simplegrid.simplegrid
 
 
+"""Provides handles to all generators and visualisations as live objects.
+
+Attributes:
+    generators -- Dict of all dataset generators.
+    visualisations -- Dict of all visualisations.
+"""
 generators = {"Primes": primes.generator.prime,
               "Gaussians": primes.generator.gaussian,
               "Prime Pairs": primes.generator.pairs}

@@ -1,6 +1,11 @@
 def is_prime(n):
-    # TODO: use a better primality test
-    # http://en.wikipedia.org/wiki/Primality_test
+    """Basic primality test for a given number.
+    
+    See: http://en.wikipedia.org/wiki/Primality_test
+
+    Arguments:
+        n -- A number to test the primality of.
+    """
     if n <= 3:
         return n >= 2
     if n % 2 == 0 or n % 3 == 0:

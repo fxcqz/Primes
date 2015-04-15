@@ -1,6 +1,7 @@
 from PyQt4 import QtGui, QtCore
 
 
+"""See FormHandler in primes.ui.form_handler for more info."""
 def conn(form):
     QtCore.QObject.connect(form.dataset, \
         QtCore.SIGNAL("currentIndexChanged(QString)"), \

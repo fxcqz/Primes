@@ -2,6 +2,7 @@ from PyQt4 import QtGui, QtCore
 from primes.utils.custom_complex import CustomComplex
 
 
+"""See FormHandler in primes.ui.form_handler for more info."""
 def conn(form):
     pass
 
