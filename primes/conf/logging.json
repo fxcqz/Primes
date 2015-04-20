@@ -37,15 +37,15 @@
     },
 
     "loggers": {
-        "whatever_module": {
-            "level": "INFO",
-            "handlers": ["console", "info_file_handler", "error_file_handler"],
+        "primes.generator": {
+            "level": "WARNING",
+            "handlers": ["info_file_handler", "error_file_handler"],
             "propagate": "no"
         }
     },
 
     "root": {
-        "level": "CRITICAL",
-        "handlers": ["console", "info_file_handler", "error_file_handler"]
+        "level": "INFO",
+        "handlers": ["info_file_handler", "error_file_handler"]
     }
 }

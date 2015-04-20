@@ -109,3 +109,5 @@ def test_gaussian_generate():
     assert_true(complex(-5, -4) in g.data)
     os.remove("primes/generator/data/gaussians/1.dat")
     os.removedirs("primes/generator/data/gaussians")
+
+# PAIRS GENERATOR ##############################################################
