@@ -18,6 +18,8 @@ Dependencies
   * https://nose.readthedocs.org/en/latest/
 * Vispy v0.3.0
   * http://vispy.readthedocs.org/en/v0.3.0/
+* PyOpenGL v3.1.0
+  * http://pyopengl.sourceforge.net/documentation/installation.html
 
 Note: Most of these packages have somewhat obscure installation processes, so if
 you don't have  them,  it's probably  best to  read  the documentation on how to

@@ -249,13 +249,19 @@ class Canvas(app.Canvas):
         """Handles mouse interaction with the canvas."""
         x, y = event.pos
         if not event.is_dragging:
-            #pixpan = (self.pan[0]*(1/self.size[0]), self.pan[1]*(1/self.size[1]))
             near = gluUnProject(x, y, 0., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
             far = gluUnProject(x, y, 1., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+            # x and y position of cursor in world coordinates
             x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5 - self.pan[0]))
             y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5 + self.pan[1]))
+            # determine whether the cursor is colliding with a point in the grid
+            # if the cursor moves out of the grid, the last position will still
+            # be highlighted - if this is a problem, move setting all toggled 
+            # false outside of the collision detection and update after regardless
+            # of collision
             if x_ >= 0 and x_ < self.init_pos and y_ >= 0 and y_ < self.init_pos:
                 self.grid["toggled"] = 0.0
+                # set the highlighted grid point to be toggled
                 self.grid["toggled"][self.coord_to_index(x_, y_)] = 1.0
                 self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
                 self.update()
