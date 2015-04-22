@@ -242,19 +242,20 @@ class StartGui(QtGui.QMainWindow):
             filename = str(filed.getSaveFileName(self, \
                 "Save the Visualisation as an Image...", QtCore.QDir.homePath(), \
                 ("Images (*.png)")))
-            if filename.find(".png") == -1:
-                # append ".png" to the filename if it is missing
-                filename += ".png"
-            if self.gl_canvas:
-                # save gl as img
-                pixels_to_image(self.gl_canvas.get_data(), (637, 437), "primes/tmp/v.png")
-            if not os.path.exists(os.path.dirname(filename)):
-                os.makedirs(os.path.dirname(filename))
-            if os.path.exists("primes/tmp/v.png"):
-                shutil.copy2("primes/tmp/v.png", filename)
-            else:
-                err = QtGui.QMessageBox.warning(self, "An error occurred.", \
-                    "No image data could be found, so your file was not saved.")
+            if filename:
+                if filename.find(".png") == -1:
+                    # append ".png" to the filename if it is missing
+                    filename += ".png"
+                if self.gl_canvas:
+                    # save gl as img
+                    pixels_to_image(self.gl_canvas.get_data(), (637, 437), "primes/tmp/v.png")
+                if not os.path.exists(os.path.dirname(filename)):
+                    os.makedirs(os.path.dirname(filename))
+                if os.path.exists("primes/tmp/v.png"):
+                    shutil.copy2("primes/tmp/v.png", filename)
+                else:
+                    err = QtGui.QMessageBox.warning(self, "An error occurred.", \
+                        "No image data could be found, so your file was not saved.")
 
     def show_about(self):
         """Displays a message box with information about the program."""
