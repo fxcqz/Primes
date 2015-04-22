@@ -14,6 +14,7 @@ VERTEX = """
 #version 120
 attribute vec3 position;
 attribute vec4 colour;
+attribute float toggled;
 
 uniform mat4 model;
 uniform mat4 view;
@@ -21,11 +22,15 @@ uniform mat4 projection;
 
 uniform float size;
 uniform vec2 pan;
+uniform vec4 t_colour;
 
 varying vec4 v_colour;
 
+varying float v_toggled;
+
 void main() {
     v_colour = colour;
+    v_toggled = toggled;
     gl_Position = projection * model * view * vec4(position + vec3(pan[0], pan[1], 0.0), 1.0);
     gl_PointSize = size;
 }
@@ -34,10 +39,16 @@ void main() {
 # Fragment Shader (glsl)
 FRAGMENT = """
 #version 120
+uniform vec4 t_colour;
+
+varying float v_toggled;
 varying vec4 v_colour;
 
 void main() {
     gl_FragColor = v_colour;
+    if(v_toggled > 0.5){
+        gl_FragColor = t_colour;
+    }
 }
 """
 
@@ -75,9 +86,11 @@ def mg(limit, colour=(1,0,0,1)):
     for y in range(rows):
         for x in range(rows):
             points.append([float(x),float(y),0.])
-    ret = numpy.zeros(n, dtype=[("position", 'f4', 3), ("colour", 'f4', 4)])
+    ret = numpy.zeros(n, dtype=[("position", 'f4', 3), ("colour", 'f4', 4),
+                                ("toggled", 'f4', 1)])
     ret["position"] = numpy.array(points)
     ret["colour"] = colour
+    ret["toggled"] = 0.0
     # maybe add a "toggled" array for marking points (selection)
     return ret
 
@@ -164,6 +177,13 @@ class Canvas(app.Canvas):
         verts = gloo.VertexBuffer(self.grid['position'].copy())
         self.program['position'] = verts
         self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
+        self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
+        # calc toggled colour & send to buf
+        t_colour = ((self.bgcolour[0]+self.fgcolour[0])/2.,
+                    (self.bgcolour[1]+self.fgcolour[1])/2.,
+                    (self.bgcolour[2]+self.fgcolour[2])/2.,
+                    (self.bgcolour[3]+self.fgcolour[3])/2.)
+        self.program['t_colour'] = t_colour
         # view (camera) matrices
         self.view = numpy.eye(4, dtype=numpy.float32)
         self.model = numpy.eye(4, dtype=numpy.float32)
@@ -221,6 +241,10 @@ class Canvas(app.Canvas):
         gloo.clear()
         self.program.draw('points')
 
+    def coord_to_index(self, x, y):
+        """Converts a coordinate to an index in the grid array"""
+        return (self.init_pos**2) - (self.init_pos + self.init_pos*y) + x
+
     def on_mouse_move(self, event):
         """Handles mouse interaction with the canvas."""
         x, y = event.pos
@@ -231,7 +255,9 @@ class Canvas(app.Canvas):
             x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5))
             y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5))
             if x_ >= 0 and x_ < self.init_pos and y_ >= 0 and y_ < self.init_pos:
-                self.set_colour((1,1,0), self.grid, (x_, y_))
+                self.grid["toggled"] = 0.0
+                self.grid["toggled"][self.coord_to_index(x_, y_)] = 1.0
+                self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
                 self.update()
             return
         dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
