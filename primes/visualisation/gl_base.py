@@ -235,7 +235,7 @@ class Canvas(app.Canvas):
         self.grid['colour'][index][0] = colour[0] / float(255)
         self.grid['colour'][index][1] = colour[1] / float(255)
         self.grid['colour'][index][2] = colour[2] / float(255)
-        self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
+        self.program['colour'] = self.grid['colour'].copy()
 
     def on_draw(self, event):
         gloo.clear()
@@ -255,16 +255,14 @@ class Canvas(app.Canvas):
             x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5 - self.pan[0]))
             y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5 + self.pan[1]))
             # determine whether the cursor is colliding with a point in the grid
-            # if the cursor moves out of the grid, the last position will still
-            # be highlighted - if this is a problem, move setting all toggled 
-            # false outside of the collision detection and update after regardless
-            # of collision
+            # shift all lines below until return into if statement if it causes
+            # speed/framerate issues
+            self.grid["toggled"] = 0.0
             if x_ >= 0 and x_ < self.init_pos and y_ >= 0 and y_ < self.init_pos:
-                self.grid["toggled"] = 0.0
                 # set the highlighted grid point to be toggled
                 self.grid["toggled"][self.coord_to_index(x_, y_)] = 1.0
-                self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
-                self.update()
+            self.program['toggled'] = self.grid['toggled'].copy()
+            self.update()
             return
         dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
         dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
