@@ -2109,3 +2109,91 @@
   Extension:    155 (Uknown extension)
   Minor opcode: 4 (Unknown request)
   Resource id:  0x1a00036
+2015-04-20 04:35:00,895 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-20 04:35:00,915 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:35:01,091 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:35:04,067 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-20 04:35:56,732 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-20 04:35:56,733 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:35:56,867 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:35:59,875 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-20 04:37:13,300 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:37:13,421 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:37:20,196 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:37:20,309 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:38:41,268 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-20 04:38:41,268 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:38:41,395 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:38:44,351 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-20 04:42:28,764 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-20 04:42:28,765 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:42:28,893 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-20 04:42:31,843 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-20 04:43:10,414 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-20 04:43:10,544 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:44:17,422 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:44:17,646 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:46:02,564 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:46:02,717 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:47:20,771 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:47:20,932 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:51:46,851 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:51:47,002 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:52:53,428 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:52:53,591 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:53:41,331 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:53:41,483 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 06:56:20,396 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 06:56:20,552 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:26:05,604 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:26:05,760 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:31:01,838 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:31:01,995 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:35:32,779 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:35:32,933 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:35:51,019 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:35:51,173 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:36:52,683 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:36:52,835 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:37:22,924 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-22 07:37:22,925 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:37:23,079 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:37:23,080 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-22 07:37:27,141 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:37:27,257 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:48:21,252 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:48:21,416 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:49:03,038 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-22 07:49:03,039 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:49:03,186 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:49:03,187 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-22 07:49:06,326 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:49:06,436 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:51:24,855 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:51:25,000 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:52:13,133 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:52:13,279 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:53:25,998 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-22 07:53:25,999 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:53:26,144 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:53:26,145 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-22 07:53:28,925 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:53:29,035 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:54:52,653 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:54:52,797 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:56:32,517 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:56:32,662 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:57:05,095 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:57:05,241 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 07:57:36,015 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 07:57:36,162 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 08:00:48,039 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 08:00:48,183 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 08:01:14,919 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 08:01:15,063 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 08:01:54,079 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 08:01:54,225 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 08:02:13,878 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 08:02:14,025 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-22 08:03:05,101 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-22 08:03:05,248 - primes.visualisation.ulam.ulam - INFO - starting ulam

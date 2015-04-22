@@ -2,6 +2,7 @@ import sys
 import numpy
 from vispy import app, gloo
 from vispy.util.transforms import perspective, translate
+from OpenGL.GLU import gluUnProject
 
 
 """Provides a basic canvas and functions for instantiating, running and
@@ -222,9 +223,17 @@ class Canvas(app.Canvas):
 
     def on_mouse_move(self, event):
         """Handles mouse interaction with the canvas."""
-        if not event.is_dragging:
-            return
         x, y = event.pos
+        if not event.is_dragging:
+            pixpan = (self.pan[0]*(1/self.size[0]), self.pan[1]*(1/self.size[1]))
+            near = gluUnProject(x+pixpan[0], y+pixpan[1], 0., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+            far = gluUnProject(x+pixpan[0], y+pixpan[1], 1., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+            x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5))
+            y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5))
+            if x_ >= 0 and x_ < self.init_pos and y_ >= 0 and y_ < self.init_pos:
+                self.set_colour((1,1,0), self.grid, (x_, y_))
+                self.update()
+            return
         dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
         dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
         #                 v just a multiplier
