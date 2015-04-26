@@ -36,14 +36,16 @@ class PlainComplex(generic.Generic):
         max_ = self.settings['max']
         new_lim = int(max([abs(np.real(min_)) + abs(np.real(max_)),
                        abs(np.imag(min_)) + abs(np.imag(max_))]))
-        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, \
-            limit=new_lim**2, bgcolour=self.settings['bgcolour'], \
-            fgcolour=self.settings['colour'], parent=parent_)
+        data_in = []
         try:
             for y in range(int(np.imag(min_)), int(np.imag(max_))):
                 for x in range(int(np.real(min_)), int(np.real(max_))):
-                    if complex(x, y) in self.generator.data:
-                        canv.set_colour(self.settings['colour'], canv.grid, (((new_lim/2)+x), ((new_lim/2)+y)))
+                    z = complex(x, y)
+                    if z in self.generator.data:
+                        data_in.append((((new_lim/2)+x), ((new_lim/2)+y), z))
         except IndexError:
             pass
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False,
+            limit=new_lim**2, bgcolour=self.settings['bgcolour'],
+            fgcolour=self.settings['colour'], parent=parent_, data=data_in)
         return canv

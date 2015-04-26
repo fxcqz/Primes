@@ -24,13 +24,12 @@ class SimpleGrid(generic.Generic):
         for elem in self.generator.data:
             x = int(elem % new_lim) - 1
             y = int(elem // new_lim)
-            self.output.append((x, y))
+            self.output.append((x, y, elem))
 
     def to_gl(self, parent_):
         """See primes.visualisation.generic for more information."""
         self.generate()
-        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, limit=self.limit, \
-            bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], parent=parent_)
-        for p in self.output:
-            canv.set_colour(self.settings['colour'], canv.grid, p)
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, limit=self.limit,
+            bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], parent=parent_,
+            data=self.output)
         return canv

@@ -2288,3 +2288,65 @@
 2015-04-26 18:43:46,656 - primes.visualisation.ulam.ulam - INFO - starting ulam
 2015-04-26 18:49:20,858 - primes.visualisation.ulam.ulam - INFO - generating data
 2015-04-26 18:49:20,999 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:01:59,810 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:01:59,955 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:10:14,011 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:10:14,155 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:12:44,267 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/home/mar/Primes/primes/ui/gui.py", line 143, in generate
+    self.visualise(visualisation)
+  File "/home/mar/Primes/primes/ui/gui.py", line 101, in visualise
+    self.gl_canvas.show()
+  File "/usr/lib/python2.7/site-packages/vispy/app/canvas.py", line 320, in show
+    return self._backend._vispy_set_visible(visible)
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 288, in _vispy_set_visible
+    self.showNormal()
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 322, in initializeGL
+    self._vispy_canvas.events.initialize()
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 237, in on_initialize
+    if self.data:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2015-04-26 19:12:44,274 - vispy - WARNING - Error invoking callback <bound method Canvas.on_initialize of <Vispy canvas (PyQt4 (qt) backend) at 0x7f6aabe56250>> for event: <Event blocked=False handled=False native=None source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f6aabe56250> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f6aabe56250>] type=initialize>
+2015-04-26 19:13:11,177 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/home/mar/Primes/primes/ui/gui.py", line 143, in generate
+    self.visualise(visualisation)
+  File "/home/mar/Primes/primes/ui/gui.py", line 101, in visualise
+    self.gl_canvas.show()
+  File "/usr/lib/python2.7/site-packages/vispy/app/canvas.py", line 320, in show
+    return self._backend._vispy_set_visible(visible)
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 288, in _vispy_set_visible
+    self.showNormal()
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 322, in initializeGL
+    self._vispy_canvas.events.initialize()
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 237, in on_initialize
+    if any(self.data):
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2015-04-26 19:13:11,178 - vispy - WARNING - Error invoking callback <bound method Canvas.on_initialize of <Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150>> for event: <Event blocked=False handled=False native=None source=<Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150>] type=initialize>
+2015-04-26 19:14:19,066 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:14:19,179 - primes.visualisation.ulam.ulam - INFO - starting ulam

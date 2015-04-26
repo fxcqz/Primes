@@ -34,13 +34,14 @@ class SacksSpiral(generic.Generic):
         """See primes.visualisation.generic for more information."""
         self.generator.generate()
         new_lim = int(np.ceil(self.limit ** 0.5))
-        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, \
-            limit=self.limit*4, bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], \
-            parent=parent_)
+        data_in = []
         for point in self.generator.data:
             coords = coordinates.pol_to_cart(np.sqrt(point), np.sqrt(point) * 2 * np.pi)
             x = new_lim + int(coords[0])
             y = new_lim - int(coords[1])
             if 0 <= x < new_lim*2 and 0 <= y < new_lim*2:
-                canv.set_colour(self.settings['colour'], canv.grid, (x, y))
+                data_in.append((x, y, point))
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, \
+            limit=self.limit*4, bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], \
+            parent=parent_, data=np.array(data_in))
         return canv

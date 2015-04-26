@@ -152,6 +152,7 @@ class Canvas(app.Canvas):
         limit -- the upper limit of the dataset
         bgcolour -- background colour of the visualisation
         fgcolour -- foreground colour of the visualisation
+        data -- the dataset which is being visualised
         program -- handle to Program from vispy.gloo (this sends data to the
                    shaders).
         init_pos -- `initial position' used for initial calculations positioning
@@ -178,6 +179,7 @@ class Canvas(app.Canvas):
         self.limit = kwargs.pop('limit', None)
         self.bgcolour = norm_colour(kwargs.pop('bgcolour', None))
         self.fgcolour = norm_colour(kwargs.pop('fgcolour', None))
+        self.data = kwargs.pop('data', None)
         app.Canvas.__init__(self, *args, **kwargs)
         app.use_app('PyQt4')
         self.program = gloo.Program(VERTEX, FRAGMENT)
@@ -229,8 +231,15 @@ class Canvas(app.Canvas):
         self.program['size'] = self.zoom['size']
 
     def on_initialize(self, event):
-        """Init event."""
+        """Init event. Colours all points found in the dataset."""
         gloo.set_state(clear_color=self.bgcolour)
+        # colour all data elements
+        if self.data is not None:
+            try:
+                for elem in self.data:
+                    self.set_colour(self.fgcolour, self.grid, (elem[0], elem[1]))
+            except IndexError:
+                pass
 
     def get_selection_colours(self):
         """Initialise the colours used for highlighting and toggling cells."""

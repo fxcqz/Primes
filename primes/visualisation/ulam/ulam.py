@@ -77,8 +77,7 @@ class UlamSpiral(generic.Generic):
         self.current_x = (new_lim**2/new_lim)/2
         self.current_y = (new_lim**2/new_lim)/2
         self.generate()
-        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, limit=self.limit, \
-            bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], parent=parent_)
-        for p in self.output:
-            canv.set_colour(self.settings['colour'], canv.grid, (p[0], p[1]))
+        canv = Canvas(keys='interactive', size=(637., 437.), resizable=False, limit=self.limit,
+            bgcolour=self.settings['bgcolour'], fgcolour=self.settings['colour'], parent=parent_,
+            data=self.output)
         return canv
