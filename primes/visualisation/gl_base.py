@@ -188,9 +188,8 @@ class Canvas(app.Canvas):
         if self.limit is None:
             # default to 1000 if no limit is specified
             self.limit = 1000
-        if self.bgcolour is None:
+        if self.bgcolour is None or self.fgcolour is None:
             self.bgcolour = (1,1,1,1)
-        if self.fgcolour is None:
             self.fgcolour = (0,0,0,1)
         self.init_pos = int(numpy.ceil(self.limit ** 0.5))
         self.grid = mg(self.limit, self.bgcolour)
@@ -273,9 +272,9 @@ class Canvas(app.Canvas):
                      the form (x, y).
         """
         index = (self.init_pos**2) - (self.init_pos + self.init_pos*coord[1]) + coord[0]
-        self.grid['colour'][index][0] = colour[0] / float(255)
-        self.grid['colour'][index][1] = colour[1] / float(255)
-        self.grid['colour'][index][2] = colour[2] / float(255)
+        self.grid['colour'][index][0] = colour[0]
+        self.grid['colour'][index][1] = colour[1]
+        self.grid['colour'][index][2] = colour[2]
         self.program['colour'] = self.grid['colour'].copy()
 
     def on_draw(self, event):
