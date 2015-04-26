@@ -14,23 +14,35 @@ VERTEX = """
 #version 120
 attribute vec3 position;
 attribute vec4 colour;
-attribute float toggled;
 
+/* `booleans' */
+attribute float toggled;
+attribute float highlighted;
+
+/* matrices */
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
 
+/* camera stuff */
 uniform float size;
 uniform vec2 pan;
+
+/* highlight and toggle colours */
 uniform vec4 t_colour;
+uniform vec4 h_colour;
 
 varying vec4 v_colour;
 
 varying float v_toggled;
+varying float v_highlighted;
 
 void main() {
     v_colour = colour;
+    
     v_toggled = toggled;
+    v_highlighted = highlighted;
+
     gl_Position = projection * model * view * vec4(position + vec3(pan[0], pan[1], 0.0), 1.0);
     gl_PointSize = size;
 }
@@ -40,13 +52,18 @@ void main() {
 FRAGMENT = """
 #version 120
 uniform vec4 t_colour;
+uniform vec4 h_colour;
 
 varying float v_toggled;
+varying float v_highlighted;
+
 varying vec4 v_colour;
 
 void main() {
     gl_FragColor = v_colour;
-    if(v_toggled > 0.5){
+    if(v_highlighted > 0.5){
+        gl_FragColor = h_colour;
+    } else if(v_toggled > 0.5){
         gl_FragColor = t_colour;
     }
 }
@@ -87,11 +104,11 @@ def mg(limit, colour=(1,0,0,1)):
         for x in range(rows):
             points.append([float(x),float(y),0.])
     ret = numpy.zeros(n, dtype=[("position", 'f4', 3), ("colour", 'f4', 4),
-                                ("toggled", 'f4', 1)])
+                                ("toggled", 'f4', 1), ("highlighted", 'f4', 1)])
     ret["position"] = numpy.array(points)
     ret["colour"] = colour
     ret["toggled"] = 0.0
-    # maybe add a "toggled" array for marking points (selection)
+    ret["highlighted"] = 0.0
     return ret
 
 def zoom(size, resolution, gl_z, step):
@@ -164,6 +181,7 @@ class Canvas(app.Canvas):
         app.Canvas.__init__(self, *args, **kwargs)
         app.use_app('PyQt4')
         self.program = gloo.Program(VERTEX, FRAGMENT)
+        # default vals for essential variables if absent in kwargs
         if self.limit is None:
             # default to 1000 if no limit is specified
             self.limit = 1000
@@ -178,19 +196,27 @@ class Canvas(app.Canvas):
         self.program['position'] = verts
         self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
         self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
-        # calc toggled colour & send to buf
-        t_colour = ((self.bgcolour[0]+self.fgcolour[0])/2.,
-                    (self.bgcolour[1]+self.fgcolour[1])/2.,
-                    (self.bgcolour[2]+self.fgcolour[2])/2.,
-                    (self.bgcolour[3]+self.fgcolour[3])/2.)
-        self.program['t_colour'] = t_colour
+        self.program['highlighted'] = gloo.VertexBuffer(self.grid['highlighted'].copy())
+        # calc selection colours & send to buf
+        sel_colours = self.get_selection_colours()
+        self.program['t_colour'] = sel_colours["toggled"]
+        self.program['h_colour'] = sel_colours["highlighted"]
         # view (camera) matrices
         self.view = numpy.eye(4, dtype=numpy.float32)
         self.model = numpy.eye(4, dtype=numpy.float32)
+        self.program['model'] = self.model
+        # initial camera displacement (centres grid in viewport)
+        init_z = -(numpy.sqrt(self.limit) / 4.)
+        if init_z < -500:
+            init_z = -500
+        translate(self.view, -(self.init_pos / 2.) + 0.5,
+                  -(self.init_pos / 2.) + 0.5, init_z)
+        self.program['view'] = self.view
         # the purpose of setting the near limit to 0.5 is that at any distance
         # nearer the points, the zooming stops working
         self.projection = perspective(135., self.size[0] /
                                       float(self.size[1]), 0.5, 500.)
+        self.program['projection'] = self.projection
         # initial camera position
         self.pan = self.program['pan'] = [0., 0.]
         # zoom data
@@ -200,19 +226,23 @@ class Canvas(app.Canvas):
         self.zoom = {"size": self.size[1] / float(self.init_pos),
                      "resolution": self.size[1],
                      "gl_z": -(numpy.sqrt(self.limit) / 4.)}
-        # initial camera displacement (centres grid in viewport)
-        init_z = -(numpy.sqrt(self.limit) / 4.)
-        if init_z < -500:
-            init_z = -500
-        translate(self.view, -(self.init_pos / 2.)+.5,
-            -(self.init_pos / 2.)+.5, -(numpy.sqrt(self.limit) / 4.))
         self.program['size'] = self.zoom['size']
-        self.program['view'] = self.view
-        self.program['model'] = self.model
-        self.program['projection'] = self.projection
 
     def on_initialize(self, event):
+        """Init event."""
         gloo.set_state(clear_color=self.bgcolour)
+
+    def get_selection_colours(self):
+        """Initialise the colours used for highlighting and toggling cells."""
+        t_colour = ((self.bgcolour[0]+self.fgcolour[0])/2.,
+                    (self.bgcolour[1]+self.fgcolour[1])/2.,
+                    (self.bgcolour[2]+self.fgcolour[2])/2.,
+                    (self.bgcolour[3]+self.fgcolour[3])/2)
+        h_colour = ((t_colour[0]+self.fgcolour[0])/2.,
+                    (t_colour[1]+self.fgcolour[1])/2.,
+                    (t_colour[2]+self.fgcolour[2])/2.,
+                    (t_colour[3]+self.fgcolour[3])/2.)
+        return {"toggled": t_colour, "highlighted": h_colour}
 
     def set_limit(self, lim):
         """Set a new limit for the visualisation"""
@@ -238,6 +268,7 @@ class Canvas(app.Canvas):
         self.program['colour'] = self.grid['colour'].copy()
 
     def on_draw(self, event):
+        """Draw event."""
         gloo.clear()
         self.program.draw('points')
 
@@ -249,6 +280,8 @@ class Canvas(app.Canvas):
         """Handles mouse interaction with the canvas."""
         x, y = event.pos
         if not event.is_dragging:
+            # use a recontruction of the viewport since we have no baseline
+            # handle with vispy (6th param of gluUnProject)
             near = gluUnProject(x, y, 0.,
                 self.view.astype('d'),
                 self.projection.astype('d'),
@@ -263,25 +296,26 @@ class Canvas(app.Canvas):
             # determine whether the cursor is colliding with a point in the grid
             # shift all lines below until return into if statement if it causes
             # speed/framerate issues
-            self.grid["toggled"] = 0.0
+            self.grid["highlighted"] = 0.0
             if x_ >= 0 and x_ < self.init_pos and y_ >= 0 and y_ < self.init_pos:
                 # set the highlighted grid point to be toggled
-                self.grid["toggled"][self.coord_to_index(x_, y_)] = 1.0
-            self.program['toggled'] = self.grid['toggled'].copy()
+                self.grid["highlighted"][self.coord_to_index(x_, y_)] = 1.0
+            self.program['highlighted'] = self.grid['highlighted'].copy()
             self.update()
             return
         dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
         dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
         #                 v just a multiplier
-        self.pan[0] -= dx * self.zoom['gl_z'] * 1.5
-        self.pan[1] -= dy * self.zoom['gl_z'] * 1.5
+        self.pan[0] -= dx * self.zoom['gl_z'] * 2.0
+        self.pan[1] -= dy * self.zoom['gl_z'] * 2.0
         self.program['pan'] = self.pan
         self.update()
 
     def on_mouse_wheel(self, event):
         """Handles mouse wheel events (just zoom in this case)."""
         delta = event.delta[1]
-        step = +.1 if delta > 0 else -.1
+        # uses step proportionate to zoom level (so zooming doesnt take forever)
+        step = -(self.zoom['gl_z']/10.) if delta > 0 else self.zoom['gl_z']/10.
         zoom_ = zoom(self.zoom['size'], self.zoom['resolution'],
         self.zoom['gl_z'], step)
         translate(self.view, 0, 0, step)
