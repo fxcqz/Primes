@@ -16,6 +16,6 @@ def poly_vals_in_range(minimum, maximum, roots):
     """
     poly = polyfromroots(roots)
     vals = itertools.takewhile(lambda x: x <= maximum,
-                [polyval(y, poly) for y in range(minimum, maximum + 1)])
+                [int(polyval(y, poly)) for y in range(minimum, maximum + 1)])
     vals = sorted(filter(lambda x: minimum <= x <= maximum, vals))
     return vals

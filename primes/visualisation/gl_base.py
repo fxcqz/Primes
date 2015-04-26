@@ -3,6 +3,7 @@ import numpy
 from vispy import app, gloo
 from vispy.util.transforms import perspective, translate
 from OpenGL.GLU import gluUnProject
+import primes.utils.poly as poly
 
 
 """Provides a basic canvas and functions for instantiating, running and
@@ -140,7 +141,7 @@ def norm_colour(colour):
         A tuple of length 4 representing an  RGBA colour where  each element has
         been scaled from 0-255 to 0-1.
     """
-    return (colour[0]/255., colour[1]/255., colour[2]/255., colour[3]/255.)
+    return (colour[0]/255., colour[1]/255., colour[2]/255., 1.)
 
 class Canvas(app.Canvas):
     """Basic OpenGL canvas using app.Canvas from Vispy.
@@ -199,6 +200,7 @@ class Canvas(app.Canvas):
         self.program['colour'] = gloo.VertexBuffer(self.grid['colour'].copy())
         self.program['toggled'] = gloo.VertexBuffer(self.grid['toggled'].copy())
         self.program['highlighted'] = gloo.VertexBuffer(self.grid['highlighted'].copy())
+        self.toggle_data = {}
         # calc selection colours & send to buf
         sel_colours = self.get_selection_colours()
         self.program['t_colour'] = sel_colours["toggled"]
@@ -246,11 +248,11 @@ class Canvas(app.Canvas):
         t_colour = ((self.bgcolour[0]+self.fgcolour[0])/2.,
                     (self.bgcolour[1]+self.fgcolour[1])/2.,
                     (self.bgcolour[2]+self.fgcolour[2])/2.,
-                    (self.bgcolour[3]+self.fgcolour[3])/2)
+                    1.)
         h_colour = ((t_colour[0]+self.fgcolour[0])/2.,
                     (t_colour[1]+self.fgcolour[1])/2.,
                     (t_colour[2]+self.fgcolour[2])/2.,
-                    (t_colour[3]+self.fgcolour[3])/2.)
+                    1.)
         return {"toggled": t_colour, "highlighted": h_colour}
 
     def set_limit(self, lim):
@@ -285,23 +287,85 @@ class Canvas(app.Canvas):
         """Converts a coordinate to an index in the grid array"""
         return (self.init_pos**2) - (self.init_pos + self.init_pos*y) + x
 
+    def mouse_gl_pos(self, x, y):
+        """Gets the location of the cursor in world coordinates.
+        
+        Arguments:
+            x -- x position of the cursor in pixels
+            y -- y position of the cursor in pixels
+        """
+        # use a recontruction of the viewport since we have no baseline
+        # handle with vispy (6th param of gluUnProject)
+        near = gluUnProject(x, y, 0.,
+            self.view.astype('d'),
+            self.projection.astype('d'),
+            numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+        far = gluUnProject(x, y, 1.,
+            self.view.astype('d'),
+            self.projection.astype('d'),
+            numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+        # x and y position of cursor in world coordinates
+        x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5 - self.pan[0]))
+        y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5 + self.pan[1]))
+        return x_, y_
+
+    def find_in_data(self, x, y):
+        """Finds the element of an array for a given x and y coordinate."""
+        for elem in self.data:
+            if elem[0] == x and elem[1] == y:
+                return elem
+        return None
+
+    def colour_polynomial(self, polynomial):
+        """Colours all values found in a given polynomial."""
+        for p in polynomial:
+            for elem in self.data:
+                if p == elem[2]:
+                    self.grid['toggled'][self.coord_to_index(elem[0], elem[1])] = 1.0
+                    self.toggle_data[self.coord_to_index(elem[0], elem[1])] = elem[2]
+                    break
+
+    def on_mouse_release(self, event):
+        """Handles the selection of points and fitting polynomials to them."""
+        # only interested about right clicks (since left click drags)
+        if self.data is not None:
+            if isinstance(self.data[0], complex):
+                # polynomial fitting doesnt work for complex numbers
+                return
+        if event.button == 2:
+            x, y = self.mouse_gl_pos(event.pos[0], event.pos[1])
+            if x >= 0 and x < self.init_pos and y >= 0 and y < self.init_pos:
+                index = self.coord_to_index(x, y)
+                if self.grid['toggled'][index] > 0.5:
+                    # if already toggled, untoggle
+                    self.grid['toggled'][index] = 0.0
+                    del self.toggle_data[index]
+                else:
+                    # if untoggled, toggle
+                    self.grid['toggled'][index] = 1.0
+                    self.toggle_data[index] = self.find_in_data(x, y)
+                if len(self.toggle_data) >= 4:
+                    # reset all toggled points
+                    self.grid['toggled'] = 0.0
+                    self.toggle_data = {}
+                try:
+                    if len(self.toggle_data) == 3:
+                        # polynomial interpolation
+                        roots = [e[2] for e in self.toggle_data.values()]
+                        polynomial = poly.poly_vals_in_range(1, self.limit, roots)
+                        self.colour_polynomial(polynomial)
+                except TypeError:
+                    pass
+                self.program['toggled'] = self.grid['toggled'].copy()
+            self.update()
+
     def on_mouse_move(self, event):
         """Handles mouse interaction with the canvas."""
         x, y = event.pos
         if not event.is_dragging:
-            # use a recontruction of the viewport since we have no baseline
-            # handle with vispy (6th param of gluUnProject)
-            near = gluUnProject(x, y, 0.,
-                self.view.astype('d'),
-                self.projection.astype('d'),
-                numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
-            far = gluUnProject(x, y, 1.,
-                self.view.astype('d'),
-                self.projection.astype('d'),
-                numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
-            # x and y position of cursor in world coordinates
-            x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5 - self.pan[0]))
-            y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5 + self.pan[1]))
+            mouse_pos = self.mouse_gl_pos(x, y)
+            x_ = mouse_pos[0]
+            y_ = mouse_pos[1]
             # determine whether the cursor is colliding with a point in the grid
             # shift all lines below until return into if statement if it causes
             # speed/framerate issues
@@ -312,13 +376,14 @@ class Canvas(app.Canvas):
             self.program['highlighted'] = self.grid['highlighted'].copy()
             self.update()
             return
-        dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
-        dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
-        #                 v just a multiplier
-        self.pan[0] -= dx * self.zoom['gl_z'] * 2.0
-        self.pan[1] -= dy * self.zoom['gl_z'] * 2.0
-        self.program['pan'] = self.pan
-        self.update()
+        if event.button == 1:
+            dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
+            dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
+            #                 v just a multiplier
+            self.pan[0] -= dx * self.zoom['gl_z'] * 2.0
+            self.pan[1] -= dy * self.zoom['gl_z'] * 2.0
+            self.program['pan'] = self.pan
+            self.update()
 
     def on_mouse_wheel(self, event):
         """Handles mouse wheel events (just zoom in this case)."""

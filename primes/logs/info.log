@@ -2350,3 +2350,265 @@ ValueError: The truth value of an array with more than one element is ambiguous.
 2015-04-26 19:13:11,178 - vispy - WARNING - Error invoking callback <bound method Canvas.on_initialize of <Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150>> for event: <Event blocked=False handled=False native=None source=<Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7fca41a49150>] type=initialize>
 2015-04-26 19:14:19,066 - primes.visualisation.ulam.ulam - INFO - generating data
 2015-04-26 19:14:19,179 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:29:23,273 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:29:23,417 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:29:46,835 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:29:46,980 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:30:31,539 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:30:31,681 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:31:22,705 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:31:22,851 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:32:16,851 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:32:16,993 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:32:49,682 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:32:49,827 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:34:23,585 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:34:23,728 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:37:45,122 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:37:45,266 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:46:22,675 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:46:22,819 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:46:55,601 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:46:55,746 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:51:28,523 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:51:28,669 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:52:27,027 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:52:27,170 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:53:09,043 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:53:09,189 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 19:53:33,170 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 19:53:33,313 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:00:32,890 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:00:33,032 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:10:29,691 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:10:29,839 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:10:42,814 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 346, in on_mouse_release
+    polynomial = poly.poly_vals_in_range(1, self.limit, roots)
+  File "/home/mar/Primes/primes/utils/poly.py", line 17, in poly_vals_in_range
+    poly = polyfromroots(roots)
+  File "/usr/lib/python2.7/site-packages/numpy/polynomial/polynomial.py", line 191, in polyfromroots
+    [roots] = pu.as_series([roots], trim=False)
+  File "/usr/lib/python2.7/site-packages/numpy/polynomial/polyutils.py", line 169, in as_series
+    raise ValueError("Coefficient array is not 1-d")
+ValueError: Coefficient array is not 1-d
+2015-04-26 20:10:42,815 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f4370c1a150>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f436d9dfa68> pos=(328, 194) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f436d9dfa68> pos=(328, 194) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f436d9dfa68> pos=(328, 194) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f4370c1a150> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f4370c1a150>] type=mouse_release>
+2015-04-26 20:11:32,788 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:11:32,930 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:11:34,884 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 347, in on_mouse_release
+    polynomial = poly.poly_vals_in_range(1, self.limit, roots)
+  File "/home/mar/Primes/primes/utils/poly.py", line 17, in poly_vals_in_range
+    poly = polyfromroots(roots)
+  File "/usr/lib/python2.7/site-packages/numpy/polynomial/polynomial.py", line 191, in polyfromroots
+    [roots] = pu.as_series([roots], trim=False)
+  File "/usr/lib/python2.7/site-packages/numpy/polynomial/polyutils.py", line 169, in as_series
+    raise ValueError("Coefficient array is not 1-d")
+ValueError: Coefficient array is not 1-d
+2015-04-26 20:11:34,886 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7fea6e81b150>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7fea6b5e0a68> pos=(369, 138) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7fea6b5e0a68> pos=(369, 138) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7fea6b5e0a68> pos=(369, 138) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7fea6e81b150> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7fea6e81b150>] type=mouse_release>
+2015-04-26 20:12:16,828 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:12:16,972 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:12:49,700 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:12:49,842 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:13:07,970 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:13:08,078 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:14:25,161 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 345, in on_mouse_release
+    roots = [e[2] for e in self.toggle_data.values()]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-04-26 20:14:25,163 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(367, 299) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(367, 299) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(367, 299) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0>] type=mouse_release>
+2015-04-26 20:14:41,392 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 345, in on_mouse_release
+    roots = [e[2] for e in self.toggle_data.values()]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-04-26 20:14:41,393 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(317, 162) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(317, 162) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(317, 162) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa9cdd0>] type=mouse_release>
+2015-04-26 20:14:51,320 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 345, in on_mouse_release
+    roots = [e[2] for e in self.toggle_data.values()]
+TypeError: 'NoneType' object has no attribute '__getitem__'
+2015-04-26 20:14:51,322 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa6d610>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(227, 66) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(227, 66) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f401fdcfa68> pos=(227, 66) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa6d610> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f401fa6d610>] type=mouse_release>
+2015-04-26 20:20:34,970 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 338, in on_mouse_release
+    del self.toggle_data[index]
+KeyError: 677
+2015-04-26 20:20:34,971 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(200, 155) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(200, 155) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(200, 155) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>] type=mouse_release>
+2015-04-26 20:20:43,392 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 338, in on_mouse_release
+    del self.toggle_data[index]
+KeyError: 675
+2015-04-26 20:20:43,394 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(170, 152) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(170, 152) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(170, 152) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>] type=mouse_release>
+2015-04-26 20:20:43,936 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 338, in on_mouse_release
+    del self.toggle_data[index]
+KeyError: 833
+2015-04-26 20:20:43,938 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(154, 97) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(154, 97) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(154, 97) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>] type=mouse_release>
+2015-04-26 20:20:45,016 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 277, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 361, in mouseReleaseEvent
+    modifiers = self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 208, in _vispy_mouse_release
+    ev = self._vispy_canvas.events.mouse_release(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/gl_base.py", line 338, in on_mouse_release
+    del self.toggle_data[index]
+KeyError: 879
+2015-04-26 20:20:45,018 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_release of <Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(313, 86) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(313, 86) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f5b011830e8> pos=(313, 86) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f5b00fe0ed0>] type=mouse_release>
+2015-04-26 20:25:21,604 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:25:21,750 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:27:30,484 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:27:30,630 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:36:57,891 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:36:58,036 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:37:30,948 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:37:31,092 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:50:04,843 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:50:04,958 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-26 20:50:43,843 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-26 20:50:43,957 - primes.visualisation.ulam.ulam - INFO - starting ulam
