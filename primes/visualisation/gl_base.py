@@ -249,8 +249,14 @@ class Canvas(app.Canvas):
         """Handles mouse interaction with the canvas."""
         x, y = event.pos
         if not event.is_dragging:
-            near = gluUnProject(x, y, 0., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
-            far = gluUnProject(x, y, 1., self.view.astype('d'), self.projection.astype('d'), numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+            near = gluUnProject(x, y, 0.,
+                self.view.astype('d'),
+                self.projection.astype('d'),
+                numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
+            far = gluUnProject(x, y, 1.,
+                self.view.astype('d'),
+                self.projection.astype('d'),
+                numpy.array([0., 0., self.size[0], self.size[1]]).astype('i'))
             # x and y position of cursor in world coordinates
             x_ = int(numpy.floor((((far[0] - near[0]) / float(500. - 0.5)) * near[2]) + near[0] + 0.5 - self.pan[0]))
             y_ = int(numpy.floor(((((far[1] - near[1]) / float(500. - 0.5)) * near[2]) + near[1]) + 0.5 + self.pan[1]))
