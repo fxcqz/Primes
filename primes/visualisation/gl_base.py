@@ -315,7 +315,8 @@ class Canvas(app.Canvas):
         """Handles mouse wheel events (just zoom in this case)."""
         delta = event.delta[1]
         # uses step proportionate to zoom level (so zooming doesnt take forever)
-        step = -(self.zoom['gl_z']/10.) if delta > 0 else self.zoom['gl_z']/10.
+        inner_step = abs(self.zoom['gl_z'] / 10.)
+        step = inner_step if delta > 0 else -inner_step
         zoom_ = zoom(self.zoom['size'], self.zoom['resolution'],
         self.zoom['gl_z'], step)
         translate(self.view, 0, 0, step)
