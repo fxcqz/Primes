@@ -2628,3 +2628,19 @@ KeyError: 879
 2015-04-26 21:05:39,456 - primes.visualisation.ulam.ulam - INFO - writing to image
 2015-04-26 21:05:47,299 - primes.visualisation.ulam.ulam - INFO - generating data
 2015-04-26 21:05:47,414 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-29 11:13:23,873 - primes.visualisation.ulam.ulam - INFO - generating image
+2015-04-29 11:13:23,918 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-29 11:13:24,125 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-29 11:13:26,985 - primes.visualisation.ulam.ulam - INFO - writing to image
+2015-04-29 11:35:32,934 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-29 11:35:33,086 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-29 11:35:58,454 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-29 11:35:58,574 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-29 11:36:35,237 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-29 11:36:35,345 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-04-29 11:36:54,935 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-04-29 11:36:55,047 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-05-04 00:04:11,658 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-05-04 00:04:11,885 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-05-04 00:04:56,913 - primes.visualisation.ulam.ulam - INFO - generating data
+2015-05-04 00:04:57,024 - primes.visualisation.ulam.ulam - INFO - starting ulam
