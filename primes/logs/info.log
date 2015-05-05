@@ -2644,3 +2644,443 @@ KeyError: 879
 2015-05-04 00:04:11,885 - primes.visualisation.ulam.ulam - INFO - starting ulam
 2015-05-04 00:04:56,913 - primes.visualisation.ulam.ulam - INFO - generating data
 2015-05-04 00:04:57,024 - primes.visualisation.ulam.ulam - INFO - starting ulam
+2015-05-05 02:37:17,068 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,089 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(331, 212) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,091 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,092 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(331, 212) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(326, 214) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,097 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,098 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(326, 214) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(324, 215) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,105 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,106 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(324, 215) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(322, 216) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,113 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,114 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(322, 216) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(321, 216) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,121 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,122 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(321, 216) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(319, 216) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,130 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,131 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(319, 216) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(318, 216) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,137 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,138 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(318, 216) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(316, 217) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,146 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,147 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(316, 217) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(314, 217) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,224 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,225 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(314, 217) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(299, 219) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,228 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,230 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(299, 219) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(298, 220) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,234 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,235 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(298, 220) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(297, 220) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,242 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,242 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(297, 220) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(296, 220) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,249 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,250 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(296, 220) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(295, 220) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,259 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,260 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(295, 220) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(293, 220) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,265 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,266 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(293, 220) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(291, 221) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,273 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,274 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(291, 221) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(290, 221) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,282 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,283 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(290, 221) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(289, 221) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,291 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,292 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(289, 221) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(286, 221) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>
+2015-05-05 02:37:17,383 - vispy - WARNING - Traceback (most recent call last):
+  File "main.py", line 14, in <module>
+    main()
+  File "main.py", line 8, in main
+    gui.run(sys.argv)
+  File "/home/mar/Primes/primes/ui/gui.py", line 279, in run
+    sys.exit(app.exec_())
+  File "/usr/lib/python2.7/site-packages/vispy/app/backends/_qt.py", line 370, in mouseMoveEvent
+    modifiers=self._modifiers(ev),
+  File "/usr/lib/python2.7/site-packages/vispy/app/base.py", line 201, in _vispy_mouse_move
+    ev = self._vispy_canvas.events.mouse_move(**kwds)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 418, in __call__
+    self._invoke_callback(cb, event)
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 446, in _invoke_callback
+    self, cb_event=(cb, event))
+  << caught exception here: >>
+  File "/usr/lib/python2.7/site-packages/vispy/util/event.py", line 435, in _invoke_callback
+    cb(event)
+  File "/home/mar/Primes/primes/visualisation/wireframe/gl_wireframe.py", line 105, in on_mouse_move
+    self.model = numpy.eye(4, dtype=float32)
+NameError: global name 'float32' is not defined
+2015-05-05 02:37:17,384 - vispy - WARNING - Error invoking callback <bound method Canvas.on_mouse_move of <Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>> for event: <MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=True last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(286, 221) press_event=<...> source=None sources=[] type=mouse_move> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(280, 222) press_event=<MouseEvent blocked=False button=2 buttons=[2] delta=(0.0, 0.0) handled=False is_dragging=False last_event=<...> modifiers=() native=<PyQt4.QtGui.QMouseEvent object at 0x7f0ac6456050> pos=(332, 211) press_event=None source=None sources=[] type=mouse_press> source=<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210> sources=[<Vispy canvas (PyQt4 (qt) backend) at 0x7f0ac695c210>] type=mouse_move>

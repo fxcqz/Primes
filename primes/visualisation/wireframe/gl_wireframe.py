@@ -98,9 +98,26 @@ class Canvas(app.Canvas):
         x, y = event.pos
         dx = +2 * ((x - event.last_event.pos[0]) / float(self.size[0]))
         dy = -2 * ((y - event.last_event.pos[1]) / float(self.size[1]))
-        #                 v just a multiplier
-        translate(self.view, 0.75 * dx * abs(self.zoom), 0.75 * dy * abs(self.zoom), 0)
-        self.program['view'] = self.view
+        if event.button == 1:
+            translate(self.view, 0.75 * dx * abs(self.zoom), 0.75 * dy * abs(self.zoom), 0)
+            self.program['view'] = self.view
+        elif event.button == 2:
+            self.model = numpy.eye(4, dtype=numpy.float32)
+            if abs(dx) > abs(dy):
+                if dx < 0:
+                    self.model_vars['r']['y'] -= 5
+                else:
+                    self.model_vars['r']['y'] += 5
+            else:
+                if dy < 0:
+                    self.model_vars['r']['x'] += 5
+                else:
+                    self.model_vars['r']['x'] -= 5
+            xrotate(self.model, self.model_vars['r']['x'])
+            yrotate(self.model, self.model_vars['r']['y'])
+            translate(self.model, self.model_vars['t'][0], self.model_vars['t'][1],
+                      self.model_vars['t'][2])
+            self.program['model'] = self.model
         self.update()
 
     def make_grid(self):
