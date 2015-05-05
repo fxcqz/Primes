@@ -176,7 +176,7 @@ class StartGui(QtGui.QMainWindow):
         graphics = str(self.ui.f_graphics.currentText())
         layout = str(self.ui.f_layout.currentText())
         if graphics == "Image (png)":
-            if layout == "Simple Grid":
+            if layout == "Simple Grid" or layout == "Wireframe":
                 self.ui.generate.setEnabled(False)
             else:
                 self.ui.generate.setEnabled(True)
@@ -215,6 +215,8 @@ class StartGui(QtGui.QMainWindow):
             self.form_handler.setup_form("complex")
         elif name == "Simple Grid":
             self.form_handler.setup_form("simplegrid")
+        elif name == "Wireframe":
+            self.form_handler.setup_form("wireframe")
 
     def new_visualisation(self):
         """Reset values of the ui elements to what they are initially so the

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'tabbed.ui'
 #
-# Created: Fri Apr 10 22:51:13 2015
+# Created: Tue May  5 02:17:12 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -99,6 +99,7 @@ class Ui_MainWindow(object):
         self.f_layout.addItem(_fromUtf8(""))
         self.f_layout.addItem(_fromUtf8(""))
         self.f_layout.addItem(_fromUtf8(""))
+        self.f_layout.addItem(_fromUtf8(""))
         self.label_2 = QtGui.QLabel(self.groupBox_5)
         self.label_2.setGeometry(QtCore.QRect(33, 46, 41, 16))
         self.label_2.setObjectName(_fromUtf8("label_2"))
@@ -184,6 +185,7 @@ class Ui_MainWindow(object):
         self.f_layout.setItemText(2, _translate("MainWindow", "Data Cloud", None))
         self.f_layout.setItemText(3, _translate("MainWindow", "Complex Plane", None))
         self.f_layout.setItemText(4, _translate("MainWindow", "Simple Grid", None))
+        self.f_layout.setItemText(5, _translate("MainWindow", "Wireframe", None))
         self.label_2.setText(_translate("MainWindow", "Layout", None))
         self.f_graphics.setItemText(0, _translate("MainWindow", "Image (png)", None))
         self.f_graphics.setItemText(1, _translate("MainWindow", "OpenGL", None))

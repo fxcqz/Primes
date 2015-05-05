@@ -5,12 +5,14 @@ from forms.sacks.form import Ui_FormSacks
 from forms.cloud.form import Ui_FormCloud
 from forms.pcomplex.form import Ui_FormComplex
 from forms.simple_grid.form import Ui_FormSimpleGrid
+from forms.wireframe.form import Ui_FormWireframe
 
 import forms.ulam.handler as ulam_handler
 import forms.sacks.handler as sacks_handler
 import forms.cloud.handler as cloud_handler
 import forms.pcomplex.handler as complex_handler
 import forms.simple_grid.handler as sg_handler
+import forms.wireframe.handler as wireframe_handler
 
 
 class FormWrapper(QtGui.QWidget):
@@ -57,7 +59,8 @@ class FormHandler():
                              "sacks": Ui_FormSacks(),
                              "cloud": Ui_FormCloud(),
                              "complex": Ui_FormComplex(),
-                             "simplegrid": Ui_FormSimpleGrid()}
+                             "simplegrid": Ui_FormSimpleGrid(),
+                             "wireframe": Ui_FormWireframe()}
         self.form_wrapper = None
 
     def setup_form(self, name):
@@ -94,6 +97,8 @@ class FormHandler():
             complex_handler.conn(self.form_wrapper.form)
         elif name == "simplegrid":
             sg_handler.conn(self.form_wrapper.form)
+        elif name == "wireframe":
+            wireframe_handler.conn(self.form_wrapper.form)
 
     def retrieve_data(self):
         """Retrieves data from the currently loaded form.
@@ -117,6 +122,8 @@ class FormHandler():
                 ret = complex_handler.retrieve(form)
             elif self.form_wrapper.name == "simplegrid":
                 ret = sg_handler.retrieve(form)
+            elif self.form_wrapper.name == "wireframe":
+                ret = wireframe_handler.retrieve(form)
         return ret
 
     def remove_form(self):
