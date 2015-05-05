@@ -105,14 +105,14 @@ class Canvas(app.Canvas):
             self.model = numpy.eye(4, dtype=numpy.float32)
             if abs(dx) > abs(dy):
                 if dx < 0:
-                    self.model_vars['r']['y'] -= 5
+                    self.model_vars['r']['y'] -= 3
                 else:
-                    self.model_vars['r']['y'] += 5
+                    self.model_vars['r']['y'] += 3
             else:
                 if dy < 0:
-                    self.model_vars['r']['x'] += 5
+                    self.model_vars['r']['x'] += 3
                 else:
-                    self.model_vars['r']['x'] -= 5
+                    self.model_vars['r']['x'] -= 3
             xrotate(self.model, self.model_vars['r']['x'])
             yrotate(self.model, self.model_vars['r']['y'])
             translate(self.model, self.model_vars['t'][0], self.model_vars['t'][1],
@@ -161,3 +161,6 @@ class Canvas(app.Canvas):
                              self.fgcolour[1]/255.,
                              self.fgcolour[2]/255.,
                              self.fgcolour[3]/255.)
+
+    def get_data(self):
+        return gloo.wrappers.read_pixels()
