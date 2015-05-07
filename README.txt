@@ -71,6 +71,12 @@ in the program has been split up into multiple packages:
 
 * Tests
     - A collection of unit tests for various parts of the program.
+    - To run the tests, navigate to primes/tests/ and run the following command:
+
+            nosetests
+
+    - Note that  the file `1.dat' should be present in the data  subdirectory of
+      the test directory in order for the tests to pass.
 
 * Ui Files
     - A collection of .ui files which have been created from layouts designed in
@@ -96,9 +102,9 @@ Dependencies
   - N.B. The  current development  version is v0.4.0.  This  is  not   backwards
          compatible so please ensure v0.3.0 is installed --- this is the current
          release present on `pip' as of 07 May 2015.
+  - v0.3.0 Source found here: https://github.com/vispy/vispy/releases/tag/v0.3.0
 * PyOpenGL v3.1.0
   - http://pyopengl.sourceforge.net/documentation/installation.html
 
-N.B. Most of these packages have  somewhat obscure installation processes, so if
-you don't have  them,  it's probably  best to  read  the documentation on how to
-install them at the urls above.
+N.B. It's probably  best to  read  the  documentation on  how to install them at
+the urls above.
