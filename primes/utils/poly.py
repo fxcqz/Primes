@@ -12,7 +12,7 @@ def poly_vals_in_range(minimum, maximum, roots):
     Arguments:
         minimum -- the lowest value in the dataset
         maximum -- the highest value in the dataset
-        points -- the roots of the polynomial
+        roots -- the roots of the polynomial
     """
     poly = polyfromroots(roots)
     vals = itertools.takewhile(lambda x: x <= maximum,
