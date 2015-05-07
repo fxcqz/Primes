@@ -3,6 +3,10 @@ from gl_wireframe import Canvas
 
 
 class Wireframe(generic.Generic):
+    """Implements a middle man between the ui and the gl_wireframe module.
+
+    See gl_wireframe.py for more information.
+    """
     def __init__(self, generator, settings):
         super(self.__class__, self).__init__(generator, settings)
 
