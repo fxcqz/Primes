@@ -71,6 +71,13 @@ class StartGui(QtGui.QMainWindow):
         # about
         self.ui.actionAbout.triggered.connect(self.show_about)
 
+    def check_tmp_storage(self):
+        """Function which creates the temporary storage directory if it is not
+        present.
+        """
+        if not os.path.exists("primes/tmp/"):
+            os.makedirs("primes/tmp/")
+
     def visualise(self, vis):
         """Runs the generation of the visualisation and adds it to the Ui.
 
