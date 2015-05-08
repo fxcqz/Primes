@@ -72,7 +72,7 @@ class PrimeCloud(generic.Generic):
             x = counter % self.mod
             self.next_point(x)
             if len(self.generator.data) > 500000:
-                self.output[self.current_y][self.current_x] += 100
+                self.output[self.current_y][self.current_x] += 10000
             else:
                 self.output[self.current_y][self.current_x] += 1000000
 
