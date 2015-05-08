@@ -71,7 +71,10 @@ class PrimeCloud(generic.Generic):
         for counter in self.generator.data:
             x = counter % self.mod
             self.next_point(x)
-            self.output[self.current_y][self.current_x] += 1000000
+            if len(self.generator.data) > 500000:
+                self.output[self.current_y][self.current_x] += 100
+            else:
+                self.output[self.current_y][self.current_x] += 1000000
 
     def to_image(self, imagename):
         """See primes.visualisation.generic for more information."""

@@ -8,6 +8,11 @@ def conn(form):
         lambda: form.gap.setEnabled(True) \
                 if form.dataset.currentText() == "Prime Pairs" \
                 else form.gap.setEnabled(False))
+    QtCore.QObject.connect(form.dataset, \
+        QtCore.SIGNAL("currentIndexChanged(QString)"), \
+        lambda: form.big_data.setEnabled(True) \
+                if form.dataset.currentText() == "Big Dataset" \
+                else form.big_data.setEnabled(False))
 
 
 def retrieve(form):
@@ -16,4 +21,5 @@ def retrieve(form):
         gap = None
     return {"dataset": str(form.dataset.currentText()),
             "min": int(form.min_.value()), "max": int(form.max_.value()),
-            "gap": gap, "mod": int(form.mod_.value())}
+            "gap": gap, "mod": int(form.mod_.value()),
+            "big": str(form.big_data.currentText())}

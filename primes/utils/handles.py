@@ -2,6 +2,7 @@
 import primes.generator.prime
 import primes.generator.gaussian
 import primes.generator.pairs
+import primes.generator.big
 
 # VISUALISATIONS
 import primes.visualisation.ulam.ulam
@@ -20,7 +21,8 @@ Attributes:
 """
 generators = {"Primes": primes.generator.prime,
               "Gaussians": primes.generator.gaussian,
-              "Prime Pairs": primes.generator.pairs}
+              "Prime Pairs": primes.generator.pairs,
+              "Big Dataset": primes.generator.big}
 
 visualisations = {"Ulam Spiral": primes.visualisation.ulam.ulam.UlamSpiral,
                   "Sacks Spiral": primes.visualisation.sacks.sacks.SacksSpiral,

@@ -1,5 +1,6 @@
 *.pyc
 *.dat
+!primes/generator/data/big/big_primes.dat
 *.png
 notes
 mar44_FinalReport_2015.pdf

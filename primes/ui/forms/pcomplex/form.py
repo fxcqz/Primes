@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'complex.ui'
 #
-# Created: Wed Mar 25 12:09:23 2015
+# Created: Fri May  8 00:53:35 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -62,14 +62,6 @@ class Ui_FormComplex(object):
         self.groupBox_2 = QtGui.QGroupBox(FormComplex)
         self.groupBox_2.setGeometry(QtCore.QRect(10, 140, 371, 251))
         self.groupBox_2.setObjectName(_fromUtf8("groupBox_2"))
-        self.label_4 = QtGui.QLabel(self.groupBox_2)
-        self.label_4.setGeometry(QtCore.QRect(13, 22, 111, 16))
-        self.label_4.setObjectName(_fromUtf8("label_4"))
-        self.domain_col = QtGui.QCheckBox(self.groupBox_2)
-        self.domain_col.setEnabled(False)
-        self.domain_col.setGeometry(QtCore.QRect(140, 22, 85, 19))
-        self.domain_col.setText(_fromUtf8(""))
-        self.domain_col.setObjectName(_fromUtf8("domain_col"))
 
         self.retranslateUi(FormComplex)
         QtCore.QMetaObject.connectSlotsByName(FormComplex)
@@ -85,5 +77,4 @@ class Ui_FormComplex(object):
         self.label_6.setText(_translate("FormComplex", "where 1 is real and 2", None))
         self.label_7.setText(_translate("FormComplex", "is imaginary", None))
         self.groupBox_2.setTitle(_translate("FormComplex", "Extras", None))
-        self.label_4.setText(_translate("FormComplex", "Domain Colouring", None))
 
