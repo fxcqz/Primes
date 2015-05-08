@@ -16,6 +16,32 @@ simply run the program from the base directory with the following command:
     python main.py
 
 
+Dependencies
+------------
+
+* Python v2.7.9
+  - https://www.python.org/
+* Numpy v1.9.2
+  - http://www.numpy.org/
+* Pillow v2.8.1
+  - http://pillow.readthedocs.org/
+* PyQt4 v4.11.3
+  - http://pyqt.sourceforge.net/Docs/PyQt4/installation.html
+* Nose v1.3.4
+  - https://nose.readthedocs.org/en/latest/
+* Vispy v0.3.0
+  - http://vispy.readthedocs.org/en/v0.3.0/
+  - N.B. The  current development  version is v0.4.0.  This  is  not   backwards
+         compatible so please ensure v0.3.0 is installed --- this is the current
+         release present on `pip' as of 07 May 2015.
+  - v0.3.0 Source found here: https://github.com/vispy/vispy/releases/tag/v0.3.0
+* PyOpenGL v3.1.0
+  - http://pyopengl.sourceforge.net/documentation/installation.html
+
+N.B. It's probably  best to  read  the  documentation on  how to install them at
+the urls above.
+
+
 Structure of the Project
 ------------------------
 
@@ -82,29 +108,3 @@ in the program has been split up into multiple packages:
     - A collection of .ui files which have been created from layouts designed in
       the  Qt Designer  program.  These are converted  to Python code using  the
       py2uic4 program (provided by PyQt).
-
-
-Dependencies
-------------
-
-* Python v2.7.9
-  - https://www.python.org/
-* Numpy v1.9.2
-  - http://www.numpy.org/
-* Pillow v2.8.1
-  - http://pillow.readthedocs.org/
-* PyQt4 v4.11.3
-  - http://pyqt.sourceforge.net/Docs/PyQt4/installation.html
-* Nose v1.3.4
-  - https://nose.readthedocs.org/en/latest/
-* Vispy v0.3.0
-  - http://vispy.readthedocs.org/en/v0.3.0/
-  - N.B. The  current development  version is v0.4.0.  This  is  not   backwards
-         compatible so please ensure v0.3.0 is installed --- this is the current
-         release present on `pip' as of 07 May 2015.
-  - v0.3.0 Source found here: https://github.com/vispy/vispy/releases/tag/v0.3.0
-* PyOpenGL v3.1.0
-  - http://pyopengl.sourceforge.net/documentation/installation.html
-
-N.B. It's probably  best to  read  the  documentation on  how to install them at
-the urls above.
