@@ -21,16 +21,15 @@ class Generator(generator.Generator):
         self.path = "primes/generator/data/primes/"
         if self.minimum < 2 and self.maximum < 2:
             self.runnable = False
-
-    def j_increment(self, j):
-        """Helper function for the Sieve of Eratosthenes algorithm.
-        
-        Returns:
-            A list of multiples of the integer j to then be excluded from the
-            prime list.
-        """
-        return [int(math.pow(j, 2) + (n * j)) for n in
-                itertools.takewhile(lambda x: int(math.pow(j, 2) + (x * j)) <= self.maximum, range(0, self.maximum))]
+    
+    def _generate(self):
+        numbers = [True] * (self.maximum + 1)
+        numbers[0] = numbers[1] = False
+        for i in xrange(2, int(n ** 0.5) + 1):
+            if numbers[i]:
+                for j in xrange(i ** 2, self.maximum + 1, i):
+                    numbers[j] = False
+        return (i for i, j in enumerate(numbers) if j)
 
     def generate(self):
         """See the stub in the Generator super class for more information."""
@@ -46,11 +45,5 @@ class Generator(generator.Generator):
             self.data = numpy.array(self.data)
         else:
             logger.info("Starting prime generation")
-            # Sieve of eratosthenes implementation
-            numbers = [True] * (self.maximum + 1)
-            for i in range(2, int(math.sqrt(self.maximum)) + 1):
-                if numbers[i]:
-                    for j in self.j_increment(i):
-                        numbers[j] = False
-            self.data = numpy.array([i for i, j in enumerate(numbers) if j and i > 1])
+            self.data = numpy.array(self._generate())
             self.to_file()
